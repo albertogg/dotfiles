@@ -1,0 +1,8 @@
+[alias]
+    co = checkout
+    st = status
+[core]
+    editor = subl -w
+[user]
+        name = albertogg
+        email = albertogrespan@gmail.com

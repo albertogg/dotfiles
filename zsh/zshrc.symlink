@@ -12,3 +12,6 @@ ZSH_THEME="newalbertogg"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/share/python/virtualenvwrapper.sh

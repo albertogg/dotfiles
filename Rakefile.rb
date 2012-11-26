@@ -82,10 +82,65 @@ task :install do
   end
 end
 
+task :uninstall do
+
+  Dir.glob('**/*.symlink').each do |linkable|
+
+    file = linkable.split('/').last.split('.symlink').last
+    target_linkable = "#{ENV["HOME"]}/.#{file}"
+
+    # Remove all symlinks created during installation
+    if File.symlink?(target_linkable)
+      FileUtils.rm(target_linkable)
+    end
+
+    # Replace any backups made during installation
+    if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
+      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"`
+    end
+
+  end
+
+  Dir.glob('**/*.zsh').each do |zshlinkable|
+
+    file = zshlinkable.split('/').last
+    target_zshlinkable = "#{ENV["HOME"]}/.oh-my-zsh/custom/#{file}"
+
+    # Remove all symlinks created during installation
+    if File.symlink?(target_zshlinkable)
+      FileUtils.rm(target_zshlinkable)
+    end
+
+    # Replace any backups made during installation
+    if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
+      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"`
+    end
+
+  end
+
+  Dir.glob('**/*.zsh-theme').each do |zshtheme|
+
+    file = zshtheme.split('/').last
+    target_zshtheme = "#{ENV["HOME"]}/.oh-my-zsh/custom/#{file}"
+
+
+    # Remove all symlinks created during installation
+    if File.symlink?(target_zshtheme)
+      FileUtils.rm(target_zshtheme)
+    end
+
+    # Replace any backups made during installation
+    if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
+      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"`
+    end
+
+  end
+end
+
 desc "Check for homebrew existence"
 task :check_for_homebrew do
   puts "checking for hombrew existence"
-  apps = %w[git rbenv coreutils mysql]
+  apps = %w[git rbenv ruby-build coreutils node mysql macvim libyaml wget tree ssh-copy-id python]
   brew = system %Q{which brew}
   if (brew == true)
     puts "Hombrew is already installed."
