@@ -6,3 +6,10 @@
 [user]
         name = albertogg
         email = albertogrespan@gmail.com
+[push]
+        default = simple
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
