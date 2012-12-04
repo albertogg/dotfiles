@@ -13,3 +13,5 @@
         status = auto
         branch = auto
         ui = true
+[credential]
+	helper = osxkeychain
