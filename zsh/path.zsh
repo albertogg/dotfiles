@@ -1,5 +1,8 @@
 # prepend to PATH.
 
+# export heroku postgres.app to PATH if exists.
+if [[ -e /Applications/Postgres.app ]]; then export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"; fi
+
 # search for rbenv.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
