@@ -1,0 +1,22 @@
+syntax on
+colorscheme desert
+
+"----------------
+" Text Formating
+"----------------
+set autoindent
+set softtabstop=2
+set shiftwidth=2
+set tabstop=4
+set expandtab
+set nosmarttab
+set textwidth=80
+
+
+"----------------
+" UI
+"----------------
+set ruler
+set number
+set showcmd
+
