@@ -19,4 +19,6 @@ set textwidth=80
 set ruler
 set number
 set showcmd
-
+set ignorecase
+set incsearch
+set showmatch
