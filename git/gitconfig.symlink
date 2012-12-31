@@ -7,7 +7,7 @@
         name = albertogg
         email = albertogrespan@gmail.com
 [push]
-        default = simple
+        default = current 
 [color]
         diff = auto
         status = auto
