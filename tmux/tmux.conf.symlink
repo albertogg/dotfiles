@@ -1,0 +1,19 @@
+# remap prefix to contro + a; because I hate the default!
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# quick pane cycling! Thoughtbot like.
+unbind ^A
+bind ^A select-pane -t :.+
+
+# force a reload of the config file
+unbind r
+bind r source-file ~/.tmux.conf
+
+# Use Vi mode
+setw -g mode-keys vi
+set -g status-keys vi
+
+# decent look
+set -g default-terminal "screen-256color"
