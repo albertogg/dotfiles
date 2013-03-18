@@ -13,6 +13,7 @@ if filereadable(expand('~/.vim/bundle/vundle/autoload/vundle.vim'))
   " required!
   Bundle 'gmarik/vundle'
   Bundle 'Lokaltog/vim-powerline'
+  Bundle 'tpope/vim-rails.git'
 
 
   filetype plugin indent on     " required!
