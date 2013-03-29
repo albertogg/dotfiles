@@ -1,0 +1,19 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Clipboard History",
+		"Emmet",
+		"ERB Insert and Toggle Commands",
+		"Git",
+		"HTML5",
+		"Package Control",
+		"Sass",
+		"SublimeBlockCursor",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Soda",
+		"Zurb Foundation Snippets"
+	]
+}
