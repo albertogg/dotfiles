@@ -110,6 +110,12 @@ file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 # Set the icon size of Dock items to 32 pixels
 defaults write com.apple.dock tilesize -int 32
 
+# Set magnification on
+defaults write com.apple.dock magnification -bool true
+
+# Set the icon magnification size to 56.8287 pixels
+defaults write com.apple.dock largesize -float 56.8287
+
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
