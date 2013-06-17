@@ -156,3 +156,14 @@ end
 def export_rbenv
   puts "hola"
 end
+
+desc "Change shell"
+task :change_shell do
+  if ENV["SHELL"] =~ /zsh/
+    puts "Already using zsh"
+  else
+    puts "changing the default shell to zsh"
+    system %Q{chsh -s `which zsh`}
+  end
+end
+
