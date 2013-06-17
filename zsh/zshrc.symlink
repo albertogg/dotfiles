@@ -13,8 +13,10 @@ plugins=(git brew osx rails3)
 
 source $ZSH/oh-my-zsh.sh
 
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/share/python/virtualenvwrapper.sh
+if [[ -e "/usr/local/share/python/virtualenvwrapper.sh" ]]; then
+  export WORKON_HOME=~/.virtualenvs
+  source /usr/local/share/python/virtualenvwrapper.sh
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
