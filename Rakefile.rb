@@ -2,6 +2,11 @@ require 'rake'
 
 desc "Dotfiles instalation"
 task :install do
+
+  change_shell
+  install_oh_my_zsh
+  check_or_install_hombrew
+
   puts "installing dotfiles. creating (symlinks)."
 
   skip_all = false
@@ -137,10 +142,9 @@ task :uninstall do
   end
 end
 
-desc "Check for homebrew existence"
-task :check_for_homebrew do
+def check_or_install_hombrew
   puts "checking for hombrew existence"
-  apps = %w[git rbenv ruby-build coreutils node mysql macvim libyaml wget tree ssh-copy-id python]
+  apps = %w[git rbenv ruby-build coreutils node mysql libyaml wget tree ssh-copy-id python]
   brew = system %Q{which brew}
   if (brew == true)
     puts "Hombrew is already installed."
@@ -149,21 +153,47 @@ task :check_for_homebrew do
       print " #{app}"
     end
   else
-    system %Q{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+    print "do you want to install hombrew now? [yn] "
+    case $stdin.gets.chomp
+    when 'y'
+      system %Q{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+    when 'n'
+      puts "skipping homebrew installation"
+    end
   end
 end
 
-def export_rbenv
-  puts "hola"
-end
-
-desc "Change shell"
-task :change_shell do
+def change_shell
   if ENV["SHELL"] =~ /zsh/
     puts "Already using zsh"
   else
-    puts "changing the default shell to zsh"
-    system %Q{chsh -s `which zsh`}
+    print "switch to zsh? [yn] "
+    case $stdin.gets.chomp
+    when 'y'
+      puts "changing the default shell to zsh"
+      system %Q{chsh -s `which zsh`}
+    when 'n'
+      puts "skipping change shell"
+    end
   end
 end
 
+def install_oh_my_zsh
+  if File.exists?(File.join(ENV["HOME"], ".oh-my-zsh"))
+    puts "oh-my-zsh already installed"
+  else
+    print "install oh-my-zsh? [yn] "
+    case $stdin.gets.chomp
+    when 'y'
+      ohmy = Dir.glob('oh-my-zsh')
+      ohmy.each do |oh|
+        ohtarget = "#{ENV["HOME"]}/.#{oh}"
+        `ln -s "$PWD/#{oh}" "#{ohtarget}"`
+      end
+    when 'n'
+      puts "skipping oh-my-zsh"
+    end
+  end
+end
+
+task :default => [:install]
