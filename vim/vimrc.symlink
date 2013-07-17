@@ -43,3 +43,6 @@ set showcmd
 set ignorecase
 set incsearch
 set showmatch
+set list
+set listchars=eol:¬,trail:·
+

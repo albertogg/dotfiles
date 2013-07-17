@@ -3,6 +3,9 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# set window numbering starting from 1
+set -g base-index 1
+
 # quick pane cycling! Thoughtbot like.
 unbind ^A
 bind ^A select-pane -t :.+
@@ -17,3 +20,31 @@ set -g status-keys vi
 
 # decent look
 set -g default-terminal "screen-256color"
+
+# Do not autorename my $#@@ window.
+set-option -g visual-activity on
+set-option -g visual-content on
+set-window-option -g monitor-activity on
+set-option -g allow-rename off
+
+# Enable mouse support (works in iTerm)
+set-window-option -g mode-mouse on
+set-option -g mouse-select-pane on
+set-option -g mouse-resize-pane on
+set-option -g mouse-select-window on
+
+## STATUS BAR COLORS AND SHIT
+#
+set-option -g message-bg colour26
+set-option -g message-fg colour15
+
+set-option -g status-utf8 on
+set-option -g status-bg colour236
+set-option -g status-fg colour15 
+
+set-window-option -g window-status-current-bg colour26
+set-window-option -g window-status-current-fg colour15
+set-window-option -g window-status-bg colour38
+set-window-option -g window-status-fg colour236
+
+set-window-option -g window-status-current-attr bold
