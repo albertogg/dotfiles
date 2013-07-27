@@ -6,6 +6,9 @@ bind C-a send-prefix
 # set window numbering starting from 1
 set -g base-index 1
 
+# renumber windows sequentially after closing any of them
+set -g renumber-windows on
+
 # quick pane cycling! Thoughtbot like.
 unbind ^A
 bind ^A select-pane -t :.+
@@ -14,33 +17,35 @@ bind ^A select-pane -t :.+
 unbind r
 bind r source-file ~/.tmux.conf
 
-# Use Vi mode
+# use vi mode
 setw -g mode-keys vi
 set -g status-keys vi
 
 # decent look
 set -g default-terminal "screen-256color"
 
-# Do not autorename my $#@@ window.
+# don't touch the name of my window
 set-option -g visual-activity on
 set-option -g visual-content on
 set-window-option -g monitor-activity on
 set-option -g allow-rename off
 
-# Enable mouse support (works in iTerm)
+# enable mouse support (works in iTerm)
 set-window-option -g mode-mouse on
 set-option -g mouse-select-pane on
 set-option -g mouse-resize-pane on
 set-option -g mouse-select-window on
 
-## STATUS BAR COLORS AND SHIT
-#
+# my tmux color theme.
+set -g  pane-border-fg colour15 #White
+set -g  pane-active-border-fg colour15 #White
+
 set-option -g message-bg colour26
 set-option -g message-fg colour15
 
 set-option -g status-utf8 on
 set-option -g status-bg colour236
-set-option -g status-fg colour15 
+set-option -g status-fg colour15
 
 set-window-option -g window-status-current-bg colour26
 set-window-option -g window-status-current-fg colour15
