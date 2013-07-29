@@ -1,26 +1,16 @@
-if filereadable(expand('~/.vim/bundle/vundle/autoload/vundle.vim'))
-  set nocompatible               " be iMproved
-  set laststatus=2   " Always show the statusline
-  set encoding=utf-8 " Necessary to show Unicode glyphs
-  set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+scriptencoding utf-8
+set encoding=utf-8
 
-  filetype off                   " required!
+set nocompatible
+set t_Co=256              " Use 256 colors
+set noswapfile
 
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-
-  " let Vundle manage Vundle
-  " required!
-  Bundle 'gmarik/vundle'
-  Bundle 'Lokaltog/vim-powerline'
-  Bundle 'tpope/vim-rails.git'
-
-
-  filetype plugin indent on     " required!
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
 
 syntax on
-colorscheme desert
+colorscheme molokai
 
 "----------------
 " Text Formating
@@ -32,11 +22,15 @@ set tabstop=4
 set expandtab
 set nosmarttab
 set textwidth=80
+set colorcolumn=80
+set cursorline
+set relativenumber
 
 
 "----------------
 " UI
 "----------------
+set laststatus=2 " Always show the status line!
 set ruler
 set number
 set showcmd
