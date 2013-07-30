@@ -21,7 +21,9 @@
 		72,
 		79
 	],
+	"vintage_start_in_command_mode": true,
 	"show_minimap": false,
+	"save_on_focus_lost": true,
 	"soda_classic_tabs": true,
 	"sublimelinter": true,
 	"tab_size": 2,
