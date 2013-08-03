@@ -9,7 +9,7 @@ ZSH_THEME="newalbertogg"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git brew osx sublime rails3)
+plugins=(git brew osx rails3)
 
 source $ZSH/oh-my-zsh.sh
 
