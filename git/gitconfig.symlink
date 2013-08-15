@@ -1,6 +1,7 @@
 [alias]
     co = checkout
     st = status
+    lg = log --pretty=format:'%h - %an, %ar : %s' --graph
 [core]
     editor = subl -w
 [user]
@@ -14,6 +15,6 @@
         branch = auto
         ui = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [pull]
-	rebase = true
+  rebase = true

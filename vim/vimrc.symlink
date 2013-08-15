@@ -10,7 +10,11 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 syntax on
-colorscheme molokai
+
+if has("gui_running")
+  colorscheme molokai
+  set cursorline
+endif
 
 "----------------
 " Text Formating
@@ -23,7 +27,6 @@ set expandtab
 set nosmarttab
 set textwidth=80
 set colorcolumn=80
-set cursorline
 set relativenumber
 
 
@@ -40,3 +43,11 @@ set showmatch
 set list
 set listchars=eol:¬,trail:·
 
+"----------------
+" Mappings
+"----------------
+" Shift + return to add end to ruby functions.
+imap <S-CR> <CR><CR>end<Esc>-cc
+
+" Autocomplete for rails.vim
+inoremap <C-Space> <C-x><C-u>

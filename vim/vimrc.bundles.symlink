@@ -12,5 +12,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nono/vim-handlebars'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on     " required!
