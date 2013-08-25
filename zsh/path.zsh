@@ -11,8 +11,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ##
 # node version manager.
-if [[ -e "/Users/albertogg/.nvm" ]]  && [[ -s "/Users/albertogg/.nvm/nvm.sh" ]]; then
-  source "/Users/albertogg/.nvm/nvm.sh"
+if [[ -e ~/.nvm ]]  && [[ -s ~/.nvm/nvm.sh ]]; then
+  source ~/.nvm/nvm.sh
 fi
 
 ##
