@@ -3,7 +3,7 @@
     st = status
     lg = log --pretty=format:'%h - %an, %ar : %s' --graph
 [core]
-    editor = subl -w
+	editor = mvim -f
 [user]
         name = albertogg
         email = albertogrespan@gmail.com
