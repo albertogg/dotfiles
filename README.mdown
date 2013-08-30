@@ -51,3 +51,9 @@ folder in the sublimetext2.app contents and replace everything.
 I also use my custom iTerm2 configuration. To use my configuration open iTerm2
 preferences > General tab, click the [x] load preferences from custom folder and
 put the direction to the folders configuration.
+
+## Thanks
+
+I decided to work on my personal dotfiles after watching holman dotfiles a while back. I
+also stole his Rakefile. Also to mathiasbynens for his amazing osx.sh
+customizations.
