@@ -16,5 +16,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nono/vim-handlebars'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-commentary'
 
 filetype plugin indent on     " required!
