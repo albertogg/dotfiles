@@ -3,6 +3,9 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# tmux use reattach-to-user-namespace -l zsh.
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
 # set window numbering starting from 1
 set -g base-index 1
 

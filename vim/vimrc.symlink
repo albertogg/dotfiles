@@ -13,6 +13,7 @@ syntax on
 
 if has("gui_running")
   colorscheme molokai
+  set clipboard=unnamed
   set cursorline
 endif
 
