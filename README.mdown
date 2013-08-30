@@ -1,6 +1,5 @@
 # albertogg dotfiles.
 
-* * *
 ## Installation instructions
 
 Dependencies needed for the installation.
@@ -17,7 +16,7 @@ Simply clone the repo.
 $ git clone https://github.com/albertogg/dotfiles.git
 ~~~
 
-After that initialize and update de submodule.
+After that, initialize and update de submodule.
 
 ~~~sh
 $ git submodule init
@@ -31,7 +30,7 @@ $ rake install
 ~~~
 
 Running the script will link every file to it's correct place. Every file with
-.symlink termination will be linked to your HOME directory and files with .zsh
+*.symlink* termination will be linked to your HOME directory and files with *.zsh*
 ending will be linked to .oh-my-zsh/custom folder.
 
 If you want to install my OS X settings just run the script inside the system
@@ -45,11 +44,11 @@ $ sh osx.sh
 ## Sublime Text 2 and iTerm.
 
 I use Tomorrow-Night.tmTheme theme in Sublime Text and I also have some custom
-configurations so you can copy the content of SublimeText2/ folder to the User
+configurations so you can copy the content of SublimeText2 folder to the User
 folder in the sublimetext2.app contents and replace everything.
 
 I also use my custom iTerm2 configuration. To use my configuration open iTerm2
-preferences > General tab, click the [x] load preferences from custom folder and
+*Preferences > General tab, click the [x] load preferences from custom folder* and
 put the direction to the folders configuration.
 
 ## Thanks
