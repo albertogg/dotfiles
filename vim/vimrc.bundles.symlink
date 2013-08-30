@@ -15,5 +15,6 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nono/vim-handlebars'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on     " required!

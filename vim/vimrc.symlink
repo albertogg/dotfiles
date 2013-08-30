@@ -47,6 +47,11 @@ set listchars=eol:¬,trail:·
 "----------------
 " Mappings
 "----------------
+let mapleader = ','
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>g :GitGutterToggle<CR>
+
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc
 
