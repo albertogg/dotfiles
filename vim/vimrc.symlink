@@ -51,9 +51,32 @@ let mapleader = ','
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>g :GitGutterToggle<CR>
+map <silent> <leader>V :so ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nmap <leader><space> :call StripTrailingWhitespaces()<CR>
 
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc
 
 " Autocomplete for rails.vim
 inoremap <C-Space> <C-x><C-u>
+
+"----------------
+" functions
+"----------------
+function! StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let previous_search=@/
+    let previous_cursor_line = line(".")
+    let previous_cursor_column = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=previous_search
+    call cursor(previous_cursor_line, previous_cursor_column)
+endfunction
+
+" strip trailing whitespace on Ruby buffer saves
+augroup whitespace
+  autocmd BufWritePre *.rb,*.js call StripTrailingWhitespaces()
+augroup END
+
