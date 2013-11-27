@@ -56,6 +56,7 @@ nmap <leader><space> :call StripTrailingWhitespaces()<CR>
 
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc
+imap ,. <C-X><C-O>
 
 " Autocomplete for rails.vim
 inoremap <C-Space> <C-x><C-u>
@@ -77,6 +78,6 @@ endfunction
 
 " strip trailing whitespace on Ruby buffer saves
 augroup whitespace
-  autocmd BufWritePre *.rb,*.js call StripTrailingWhitespaces()
+  autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
 augroup END
 
