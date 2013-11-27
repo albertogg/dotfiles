@@ -50,6 +50,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -81,7 +83,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Dropbox/code/dotfiles/iTerm</string>
+	<string>~/Dropbox</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -89,9 +91,11 @@
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 110 924 485 0 0 1680 1028 </string>
+	<string>326 91 924 485 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>648 498 850 530 0 0 1680 1028 </string>
+	<string>421 151 850 530 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>453 115 850 530 0 0 1366 746 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1542,7 +1546,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-08-25T22:29:40Z</date>
+	<date>2013-11-20T14:28:59Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1584,6 +1588,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130624</string>
+	<string>1.0.0.20131116</string>
 </dict>
 </plist>
