@@ -26,7 +26,9 @@ set shiftwidth=2
 set tabstop=4
 set expandtab
 set nosmarttab
-set textwidth=80
+set wrap
+set linebreak
+set textwidth=0
 set colorcolumn=80
 set relativenumber
 
