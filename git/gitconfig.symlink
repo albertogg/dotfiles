@@ -4,6 +4,7 @@
     lg = log --pretty=format:'%h - %an, %ar : %s' --graph
 [core]
 	editor = mvim -f
+	autocrlf = input
 [user]
         name = albertogg
         email = albertogrespan@gmail.com
