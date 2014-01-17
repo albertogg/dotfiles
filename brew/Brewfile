@@ -1,0 +1,32 @@
+# Stolen from @jonotrujillo.
+
+# Make sure we are using the latest Homebrew
+update
+
+# System formulae
+install ack
+install coreutils
+install git
+install tree
+install wget
+install rsync
+install ctags
+install reattach-to-user-namespace
+install vim --override-system-vi
+
+# Development formulae
+install rbenv
+install ruby-install
+install rbenv-gem-rehash
+install tmux
+install tmate
+
+# Setup Cask
+tap phinze/cask
+install brew-cask
+
+# Quick Look plugins
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv webp-quicklook
+
+# Remove outdated versions from the cellar
+cleanup
