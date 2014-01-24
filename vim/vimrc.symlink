@@ -55,6 +55,7 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>g :GitGutterToggle<CR>
 map <silent> <leader>V :so ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nmap <leader><space> :call StripTrailingWhitespaces()<CR>
+nnoremap <leader>. :CtrlP<CR>
 
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc

@@ -18,5 +18,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on     " required!
