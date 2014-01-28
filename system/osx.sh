@@ -37,6 +37,16 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 ###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
+
+# Disable local Time Machine snapshots
+sudo tmutil disablelocal
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
+
+###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
