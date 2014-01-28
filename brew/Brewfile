@@ -23,6 +23,7 @@ install tmate
 
 # Setup Cask
 tap phinze/cask
+tap caskroom/versions
 install brew-cask
 
 # Quick Look plugins
