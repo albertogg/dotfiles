@@ -41,13 +41,9 @@ $ sh osx.sh
 ~~~
 
 * * *
-## Sublime Text 2 and iTerm.
+## iTerm.
 
-I use Tomorrow-Night.tmTheme theme in Sublime Text and I also have some custom
-configurations so you can copy the content of SublimeText2 folder to the User
-folder in the sublimetext2.app contents and replace everything.
-
-I also use my custom iTerm2 configuration. To use my configuration open iTerm2
+I use my custom iTerm2 configuration. To use my configuration open iTerm2
 *Preferences > General tab, click the [x] load preferences from custom folder* and
 put the direction to the folders configuration.
 
