@@ -12,11 +12,9 @@ install wget
 install rsync
 install ctags
 install reattach-to-user-namespace
-install vim --override-system-vi
 
 # Development formulae
 install rbenv
-install ruby-install
 install rbenv-gem-rehash
 install tmux
 install tmate
