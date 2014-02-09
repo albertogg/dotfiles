@@ -42,6 +42,15 @@ folder.
 $ sh osx.sh
 ~~~
 
+## Hombrew
+
+To install my default homebrew apps (git, coreutils, tree, rbenv, tmux, etc...)
+use this command:
+
+~~~sh
+$ brew bundle /path/to/Brewfile
+~~~
+
 * * *
 ## iTerm.
 
