@@ -1,20 +1,20 @@
 [alias]
-    co = checkout
-    st = status
-    lg = log --pretty=format:'%h - %an, %ar : %s' --graph
+  co = checkout
+  st = status
+  lg = log --pretty=format:'%h - %an, %ar : %s' --graph
 [core]
-	editor = mvim -f
-	autocrlf = input
+  editor = mvim -f
+  autocrlf = input
 [user]
-        name = albertogg
-        email = albertogrespan@gmail.com
+  name = albertogg
+  email = albertogrespan@gmail.com
 [push]
-        default = current 
+  default = current 
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [credential]
   helper = osxkeychain
 [pull]
