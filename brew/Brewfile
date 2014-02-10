@@ -22,13 +22,5 @@ install rbenv-vars
 install tmux
 install tmate
 
-# Setup Cask
-tap phinze/cask
-tap caskroom/versions
-install brew-cask
-
-# Quick Look plugins
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv webp-quicklook
-
 # Remove outdated versions from the cellar
 cleanup
