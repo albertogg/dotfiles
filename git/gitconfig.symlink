@@ -1,7 +1,7 @@
 [alias]
   co = checkout
   st = status
-  lg = log --pretty=format:'%h - %an, %ar : %s' --graph
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
   editor = mvim -f
   autocrlf = input
@@ -9,7 +9,7 @@
   name = albertogg
   email = albertogrespan@gmail.com
 [push]
-  default = current 
+  default = current
 [color]
   diff = auto
   status = auto
