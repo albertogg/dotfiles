@@ -7,7 +7,10 @@ bind C-a send-prefix
 
 # bind old windows behavior (pre 1.9)
 unbind '"'
+unbind |
+unbind %
 bind '"' split-window -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
 
 # use vi mode
 setw -g mode-keys vi
