@@ -5,6 +5,10 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# bind old windows behavior (pre 1.9)
+unbind '"'
+bind '"' split-window -c "#{pane_current_path}"
+
 # use vi mode
 setw -g mode-keys vi
 set -g status-keys vi
