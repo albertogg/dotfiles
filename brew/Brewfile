@@ -10,6 +10,7 @@ install git
 install tree
 install wget
 install rsync
+install ssh-copy-id
 install ctags
 install reattach-to-user-namespace
 
