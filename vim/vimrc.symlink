@@ -52,6 +52,7 @@ set listchars=eol:¬,trail:·
 " Mappings
 "----------------
 let mapleader = ','
+inoremap jj <Esc>
 nnoremap <leader>. :CtrlP<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
