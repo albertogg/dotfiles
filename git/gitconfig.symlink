@@ -19,3 +19,5 @@
   helper = osxkeychain
 [pull]
   rebase = true
+[fetch]
+  prune = true
