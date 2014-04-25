@@ -6,6 +6,10 @@
 if [[ -e "/Applications/Postgres.app" ]]; then export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"; fi
 
 ##
+# if go is installed export GOPATH
+if [[ ( -e `which go` && -e "$HOME/.go" ) ]]; then export GOPATH=$HOME/.go; fi
+
+##
 # search for rbenv.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
