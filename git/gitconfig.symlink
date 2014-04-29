@@ -21,3 +21,5 @@
   rebase = true
 [fetch]
   prune = true
+[branch]
+  autosetuprebase = always
