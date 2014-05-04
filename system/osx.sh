@@ -68,6 +68,12 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
+# Disable press-and-hold for keys in favor of key repeat
+#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+#defaults write NSGlobalDomain KeyRepeat -int 0
+
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en" "es"
 defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
