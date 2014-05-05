@@ -86,3 +86,6 @@ endfunction
 augroup whitespace
   autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
 augroup END
+
+au BufRead,BufNewFile *.md setlocal spell
+au FileType gitcommit setlocal spell
