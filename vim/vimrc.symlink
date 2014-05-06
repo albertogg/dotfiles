@@ -84,8 +84,11 @@ endfunction
 
 " strip trailing whitespace on Ruby buffer saves
 augroup whitespace
-  autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
+  au BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
 augroup END
 
-au BufRead,BufNewFile *.md setlocal spell
+"----------------
+" autocmd
+"----------------
+au BufRead,BufNewFile *.md,*.markdown setlocal spell
 au FileType gitcommit setlocal spell
