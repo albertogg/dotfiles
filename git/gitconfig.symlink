@@ -6,7 +6,7 @@
   editor = mvim -f
   autocrlf = input
 [user]
-  name = albertogg
+  name = Alberto Grespan
   email = albertogrespan@gmail.com
 [push]
   default = current
