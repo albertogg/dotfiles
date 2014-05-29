@@ -7,7 +7,7 @@ if [[ -e "/Applications/Postgres.app" ]]; then export PATH="/Applications/Postgr
 
 ##
 # if go is installed export GOPATH
-if [[ ( -e `which go` && -e "$HOME/.go" ) ]]; then export GOPATH=$HOME/.go; fi
+if [[ ( -e `which go` && -e "$HOME/.go" ) ]]; then export GOPATH=$HOME/.go && export PATH="$GOPATH/bin:$PATH"; fi
 
 ##
 # search for rbenv.
