@@ -18,7 +18,6 @@ install reattach-to-user-namespace
 install rbenv
 install ruby-build
 install rbenv-gem-rehash
-install rbenv-readline
 install rbenv-vars
 install tmux
 install tmate
