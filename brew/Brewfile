@@ -19,6 +19,7 @@ install rbenv
 install ruby-build
 install rbenv-gem-rehash
 install rbenv-vars
+install rbenv-default-gems
 install tmux
 install tmate
 
