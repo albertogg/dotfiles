@@ -3,7 +3,7 @@
 
 ##
 # if exists, export heroku postgres.app to PATH.
-if [[ -e "/Applications/Postgres.app" ]]; then export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"; fi
+if [[ -e "/Applications/Postgres.app" ]]; then export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"; fi
 
 ##
 # if go is installed export GOPATH
