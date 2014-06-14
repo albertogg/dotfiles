@@ -12,22 +12,22 @@ Dependencies needed for the installation.
 
 Simply clone the repo.
 
-~~~sh
+```sh
 $ git clone https://github.com/albertogg/dotfiles.git
-~~~
+```
 
 After that, initialize and update de submodule.
 
-~~~sh
+```sh
 $ git submodule init
 $ git submodule update
-~~~
+```
 
 Let's put everything in place so it works as it should.
 
-~~~sh
+```sh
 $ rake install
-~~~
+```
 
 Running the script will link every file to it's correct place. Every file with
 *.symlink* termination will be linked to your HOME directory and files with *.zsh*
@@ -38,18 +38,18 @@ ending will be linked to .oh-my-zsh/custom folder.
 If you want to install my OS X settings just run the script inside the system
 folder.
 
-~~~sh
+```sh
 $ sh osx.sh
-~~~
+```
 
 ## Hombrew
 
 To install my default homebrew apps (git, coreutils, tree, rbenv, tmux, etc...)
 use this command:
 
-~~~sh
+```sh
 $ brew bundle /path/to/Brewfile
-~~~
+```
 
 * * *
 ## iTerm.
