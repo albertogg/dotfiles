@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 ##
-# Copied and modified from @jonotrujillo
+# Install script copied from @jonotrujillo
+# Modified to my needs
 ##
 
 SKIP_ALL=false
@@ -14,13 +15,15 @@ for linkable in $LINKABLES; do
   OVERWRITE=false
 
   LINKABLE_NAME="${linkable##*/}"
+  TARGET_NAME="${LINKABLE_NAME%.symlink}"
 
   if [[ $LINKABLE_NAME =~ ".zsh." ]]; then
-    TARGET_NAME="${LINKABLE_NAME%.symlink}"
-    TARGET="$HOME/Desktop/bolas/zsh/$TARGET_NAME"
+    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
+  elif [[ $LINKABLE_NAME =~ ".zsh-theme." ]]; then
+    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
   else
     TARGET_NAME=".${LINKABLE_NAME%.symlink}"
-    TARGET="$HOME/Desktop/bolas/$TARGET_NAME"
+    TARGET="$HOME/$TARGET_NAME"
   fi
 
   if [ -e "$TARGET" ] && ! $OVERWRITE_ALL && ! $SKIP_ALL; then
