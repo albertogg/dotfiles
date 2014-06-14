@@ -7,7 +7,6 @@ Dependencies needed for the installation.
 - git
 - tmux (not a dep, but awesome)
 - reattach-to-user-namespace (use pbcopy in tmux)
-- ruby rake
 - coreutils (not a dep, but very useful)
 
 Simply clone the repo.
@@ -16,22 +15,15 @@ Simply clone the repo.
 $ git clone https://github.com/albertogg/dotfiles.git
 ```
 
-After that, initialize and update de submodule.
+Run the install script
 
 ```sh
-$ git submodule init
-$ git submodule update
-```
-
-Let's put everything in place so it works as it should.
-
-```sh
-$ rake install
+$ make install
 ```
 
 Running the script will link every file to it's correct place. Every file with
-*.symlink* termination will be linked to your HOME directory and files with *.zsh*
-ending will be linked to .oh-my-zsh/custom folder.
+*.symlink* termination will be linked to your HOME directory and files with *.zsh.*
+will be linked to .oh-my-zsh/custom folder.
 
 ## OS X
 
@@ -44,7 +36,7 @@ $ sh osx.sh
 
 ## Hombrew
 
-To install my default homebrew apps (git, coreutils, tree, rbenv, tmux, etc...)
+To install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
 use this command:
 
 ```sh
