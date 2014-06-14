@@ -1,8 +1,12 @@
 install: install-oh-my-zsh \
-         install-files
+         install-homebrew \
+         install-dotfiles
 
-install-files:
-	scripts/install.sh
+install-dotfiles:
+	scripts/install
 
 install-oh-my-zsh:
 	curl -L http://install.ohmyz.sh | sh
+
+install-homebrew:
+	scripts/install-homebrew
