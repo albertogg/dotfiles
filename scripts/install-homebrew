@@ -7,3 +7,11 @@ else
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   echo "Done..."
 fi
+
+read -p "Would you like to install brew applications? [y/n]" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Installing..."
+    brew bundle brew/Brewfile
+    brew bundle brew/caskfile
+fi
+
