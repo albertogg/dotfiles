@@ -1,4 +1,5 @@
 install: install-oh-my-zsh \
+         change-shell \
          install-homebrew \
          install-dotfiles
 
@@ -10,3 +11,6 @@ install-oh-my-zsh:
 
 install-homebrew:
 	scripts/install-homebrew
+
+change-shell:
+	scripts/change-shell
