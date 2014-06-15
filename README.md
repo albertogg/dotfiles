@@ -15,20 +15,28 @@ Simply clone the repo.
 $ git clone https://github.com/albertogg/dotfiles.git
 ```
 
-Run the install script
+Running the install script will do the following:
+
+- Install oh-my-zsh to your `$HOME` directory
+- Change the default shell of the current `$USER` to ZSH
+- Install Homebrew if it isn't and my default apps
+- Symlink the dotfiles to their proper place
 
 ```sh
 $ make install
 ```
 
-Running the script will link every file to it's correct place. Every file with
-*.symlink* termination will be linked to your HOME directory and files with *.zsh.*
-will be linked to .oh-my-zsh/custom folder.
+> The symlinks are linked by their extension. If the file only contain a `.symlink`
+> extension they are placed in the $USER $HOME dir as a hidden file. If they
+> have something to do with oh-my-zsh they are placed in the `/custom` folder
+> inside the `.oh-my-zsh` dir.
 
 ## OS X
 
 If you want to install my OS X settings just run the script inside the system
 folder.
+
+> This make script is missing
 
 ```sh
 $ sh osx.sh
@@ -36,14 +44,15 @@ $ sh osx.sh
 
 ## Hombrew
 
-To install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
-use this command:
+You can run an individual task to check if Homebrew is installed and also to
+install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
+
+To achieve this you can use this command:
 
 ```sh
-$ brew bundle /path/to/Brewfile
+$ make install-hombrew
 ```
 
-* * *
 ## iTerm.
 
 I use my custom iTerm2 configuration. To use my configuration open iTerm2
