@@ -14,3 +14,6 @@ install-homebrew:
 
 change-shell:
 	scripts/change-shell
+
+uninstall:
+	scripts/uninstall

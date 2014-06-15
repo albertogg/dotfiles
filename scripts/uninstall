@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+LINKABLES=$(find * -name "*.symlink")
+
+for linkable in $LINKABLES; do
+
+  LINKABLE_NAME="${linkable##*/}"
+  TARGET_NAME="${LINKABLE_NAME%.symlink}"
+
+  remove_links() {
+    if [[ -L $1 ]]; then
+      echo "Removing $1"
+      rm $1
+    fi
+  }
+
+  if [[ $LINKABLE_NAME =~ ".zsh." ]]; then
+    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
+    remove_links $TARGET
+  elif [[ $LINKABLE_NAME =~ ".zsh-theme." ]]; then
+    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
+    remove_links $TARGET
+  else
+    TARGET_NAME=".${LINKABLE_NAME%.symlink}"
+    TARGET="$HOME/$TARGET_NAME"
+    remove_links $TARGET
+  fi
+done
