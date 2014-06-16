@@ -12,7 +12,7 @@ Dependencies needed for the installation.
 Simply clone the repo.
 
 ```sh
-$ git clone https://github.com/albertogg/dotfiles.git
+$ git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
 ```
 
 Running the install script will do the following:
@@ -61,12 +61,6 @@ put the direction to the folders configuration.
 
 ## License
 
-[MIT License][mit]
-
-## Thanks
-
-I decided to work on my personal dotfiles after watching holman dotfiles a while back. I
-also stole his Rakefile. Also to mathiasbynens for his amazing osx.sh
-customizations.
+[MIT License][mit] as usual!
 
 [mit]: https://github.com/albertogg/dotfiles/blob/master/LICENSE
