@@ -33,13 +33,10 @@ $ make install
 
 ## OS X
 
-If you want to install my OS X settings just run the script inside the system
-folder.
-
-> This make script is missing
+If you want to install my OS X settings just run the following command:
 
 ```sh
-$ sh osx.sh
+$ make install-osx
 ```
 
 ## Hombrew

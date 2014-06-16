@@ -15,5 +15,8 @@ install-homebrew:
 change-shell:
 	scripts/change-shell
 
+install-osx:
+	system/osx
+
 uninstall:
 	scripts/uninstall
