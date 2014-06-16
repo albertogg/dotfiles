@@ -9,7 +9,7 @@ ZSH_THEME="newalbertogg"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git brew osx rails bundler)
+plugins=(git brew osx heroku rails bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,6 +17,3 @@ if [[ -e "/usr/local/share/python/virtualenvwrapper.sh" ]]; then
   export WORKON_HOME=~/.virtualenvs
   source /usr/local/share/python/virtualenvwrapper.sh
 fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
