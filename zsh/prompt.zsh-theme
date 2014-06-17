@@ -1,3 +1,6 @@
+# -*- mode: sh -*-
+# vi: set ft=zsh :
+
 # get the name of the branch we are on
 function git_prompt_info() {
   if [[ "$(git config --get oh-my-zsh.hide-status)" != "1" ]]; then
