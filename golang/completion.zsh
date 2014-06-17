@@ -1,4 +1,4 @@
-completion='/usr/local/share/zsh/site-functions/go'
+completion="$(brew --prefix)/share/zsh/site-functions/go"
 
 if test -f $completion
 then
