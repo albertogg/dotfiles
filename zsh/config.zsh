@@ -32,9 +32,6 @@ unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt always_to_end
 
-# Try to correct command line spelling
-setopt correct correctall
-
 # Enable extended globing
 setopt extendedglob
 
