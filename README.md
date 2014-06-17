@@ -17,7 +17,6 @@ $ git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
 
 Running the install script will do the following:
 
-- Install oh-my-zsh to your `$HOME` directory
 - Change the default shell of the current `$USER` to ZSH
 - Install Homebrew if it isn't and my default apps
 - Symlink the dotfiles to their proper place
@@ -27,9 +26,7 @@ $ make install
 ```
 
 > The symlinks are linked by their extension. If the file only contain a `.symlink`
-> extension they are placed in the $USER $HOME dir as a hidden file. If they
-> have something to do with oh-my-zsh they are placed in the `/custom` folder
-> inside the `.oh-my-zsh` dir.
+> extension they are placed in the $HOME dir as a hidden file.
 
 ## OS X
 
