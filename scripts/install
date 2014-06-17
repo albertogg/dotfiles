@@ -15,16 +15,8 @@ for linkable in $LINKABLES; do
   OVERWRITE=false
 
   LINKABLE_NAME="${linkable##*/}"
-  TARGET_NAME="${LINKABLE_NAME%.symlink}"
-
-  if [[ $LINKABLE_NAME =~ ".zsh." ]]; then
-    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
-  elif [[ $LINKABLE_NAME =~ ".zsh-theme." ]]; then
-    TARGET="$HOME/.oh-my-zsh/custom/$TARGET_NAME"
-  else
-    TARGET_NAME=".${LINKABLE_NAME%.symlink}"
-    TARGET="$HOME/$TARGET_NAME"
-  fi
+  TARGET_NAME=".${LINKABLE_NAME%.symlink}"
+  TARGET="$HOME/$TARGET_NAME"
 
   if [ -e "$TARGET" ] && ! $OVERWRITE_ALL && ! $SKIP_ALL; then
     until $SKIP || $SKIP_ALL || $OVERWRITE || $OVERWRITE_ALL; do
