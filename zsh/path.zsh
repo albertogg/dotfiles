@@ -15,9 +15,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ##
 # add coreutils.
+# add coreutils manuals.
 # add homebrew installed packages.
 # last export will be the first in path!
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 ##
 # if exists, add path for homebrew installed python.
