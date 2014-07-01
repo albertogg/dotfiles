@@ -53,6 +53,19 @@ I use my custom iTerm2 configuration. To use my configuration open iTerm2
 *Preferences > General tab, click the [x] load preferences from custom folder* and
 put the direction to the folders configuration.
 
+## MacVim fonts
+
+I use a plugin called `Airline` a successor to Powerline without python.
+I also use a custom font for Powerline that has pretty icons and things. To use it
+we need to clone the repo into a `~/.fonts` directory and run a command.
+
+```sh
+$ git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts
+$ fc-cache -vf ~/.fonts
+```
+
+And that's it... There should be a pretty status bar in your MacVim.
+
 ## License
 
 [MIT License][mit] as usual!

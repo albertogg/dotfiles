@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Other bundles.
-"Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-markdown.git'
 Plugin 'tpope/vim-fugitive.git'
@@ -23,6 +22,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
