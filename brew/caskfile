@@ -1,5 +1,5 @@
 # Setup Cask
-tap phinze/cask
+tap caskroom/cask
 tap caskroom/versions
 install brew-cask
 
