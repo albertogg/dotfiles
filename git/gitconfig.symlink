@@ -1,24 +1,24 @@
 [alias]
-  co = checkout
-  st = status
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-  fu = fetch upstream
+    co = checkout
+    st = status
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    fu = fetch upstream
 [core]
-  editor = mvim -f
-  autocrlf = input
+    editor = mvim -f
+    autocrlf = input
 [user]
-  name = Alberto Grespan
-  email = albertogrespan@gmail.com
+    name = Alberto Grespan
+    email = albertogrespan@gmail.com
 [push]
-  default = current
+    default = current
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
 [fetch]
-  prune = true
-[branch]
-  autosetuprebase = always
+    prune = true
+    [branch]
+    autosetuprebase = always
