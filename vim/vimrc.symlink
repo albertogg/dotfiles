@@ -12,9 +12,7 @@ endif
 syntax on
 
 if has("gui_running")
-  colorscheme molokai
   set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
-  let g:airline_powerline_fonts = 1
   set clipboard=unnamed
   set cursorline
   set go-=L   " remove left scrollbar
@@ -40,6 +38,8 @@ set relativenumber
 "----------------
 " UI
 "----------------
+silent! colorscheme molokai
+let g:airline_powerline_fonts = 1
 set laststatus=2 " Always show the status line!
 set ruler
 set number
