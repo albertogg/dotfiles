@@ -34,7 +34,6 @@ set textwidth=0
 set colorcolumn=80
 set relativenumber
 
-
 "----------------
 " UI
 "----------------
@@ -68,6 +67,11 @@ imap ,. <C-X><C-O>
 
 " Autocomplete for rails.vim
 inoremap <C-Space> <C-x><C-u>
+
+"----------------
+"CtrlP
+"----------------
+let g:ctrlp_show_hidden = 1
 
 "----------------
 " functions

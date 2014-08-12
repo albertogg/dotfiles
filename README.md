@@ -61,10 +61,12 @@ we need to clone the repo into a `~/.fonts` directory and run a command.
 
 ```sh
 $ git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts
-$ fc-cache -vf ~/.fonts
+$ open ~/.fonts
 ```
 
-And that's it... There should be a pretty status bar in your MacVim.
+And install the fonts manually on OS X by double clicking the font of your
+preference. After that you should successfully have your nice looking Vim and
+MacVim.
 
 ## License
 
