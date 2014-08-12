@@ -82,10 +82,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Dropbox/code/dotfiles/iTerm</string>
+	<string>~</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -110,11 +108,11 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>75 393 918 464 0 0 1920 1058 </string>
+	<string>269 83 916 512 0 0 1366 746 </string>
+	<key>NSWindow Frame SUUpdateAlertFrame</key>
+	<string>395 266 575 392 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>986 197 850 531 0 0 1920 1058 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>229 96 850 530 0 0 1680 1028 </string>
+	<string>375 142 850 531 0 0 1366 746 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -283,7 +281,7 @@
 			<key>Automatically Log</key>
 			<false/>
 			<key>BM Growl</key>
-			<true/>
+			<false/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1565,7 +1563,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-08-10T16:30:56Z</date>
+	<date>2014-08-12T00:09:19Z</date>
+	<key>SUSkippedVersion</key>
+	<string>2.9.20140811-nightly</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
