@@ -88,13 +88,18 @@ function! StripTrailingWhitespaces()
     call cursor(previous_cursor_line, previous_cursor_column)
 endfunction
 
-" strip trailing whitespace on Ruby buffer saves
-augroup whitespace
-  au BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
-augroup END
-
 "----------------
 " autocmd
 "----------------
-au BufRead,BufNewFile *.md,*.markdown setlocal spell
-au FileType gitcommit setlocal spell
+augroup whitespace
+  autocmd!
+  " strip trailing whitespace on Ruby buffer saves
+  au BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
+augroup END
+
+augroup spelling_location
+  autocmd!
+  " set spelling correction when in markdown files and in gitcommits
+  au BufRead,BufNewFile *.md,*.markdown setlocal spell
+  au FileType gitcommit setlocal spell
+augroup END
