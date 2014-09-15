@@ -91,15 +91,12 @@ endfunction
 "----------------
 " autocmd
 "----------------
-augroup whitespace
+augroup vimrcEx
   autocmd!
   " strip trailing whitespace on Ruby buffer saves
-  au BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
-augroup END
+  autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
 
-augroup spelling_location
-  autocmd!
   " set spelling correction when in markdown files and in gitcommits
-  au BufRead,BufNewFile *.md,*.markdown setlocal spell
-  au FileType gitcommit setlocal spell
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd FileType gitcommit setlocal spell
 augroup END
