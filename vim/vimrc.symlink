@@ -105,4 +105,6 @@ augroup vimrcEx
   " set spell in gitcommits
   autocmd FileType gitcommit setlocal spell
 
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
 augroup END
