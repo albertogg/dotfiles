@@ -107,4 +107,7 @@ augroup vimrcEx
 
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
+
+  " Go files tab configuration
+  autocmd FileType go setl softtabstop=4 shiftwidth=4
 augroup END
