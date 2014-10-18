@@ -108,11 +108,13 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 83 916 512 0 0 1366 746 </string>
+	<string>286 148 918 498 0 0 1366 746 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>373 266 620 392 0 0 1366 746 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>395 266 575 392 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>375 142 850 531 0 0 1366 746 </string>
+	<string>51 196 850 531 0 0 1366 746 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -732,7 +734,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.1120215430855751</real>
+			<real>0.18942769970414203</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1499,6 +1501,12 @@
 			<string>/Users/albertogg</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1558,14 +1566,14 @@
 	<integer>3</integer>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/nightly.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-08-12T00:09:19Z</date>
-	<key>SUSkippedVersion</key>
-	<string>2.9.20140811-nightly</string>
+	<date>2014-10-12T23:54:24Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1606,7 +1614,11 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20140809-nightly</string>
+	<string>2.9.20140927-nightly</string>
 </dict>
 </plist>

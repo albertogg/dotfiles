@@ -4,6 +4,8 @@ set encoding=utf-8
 set nocompatible
 set t_Co=256              " Use 256 colors
 set noswapfile
+" fix the backspace in vim
+set backspace=indent,eol,start
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

@@ -20,9 +20,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'nono/vim-handlebars'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'honza/dockerfile.vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
