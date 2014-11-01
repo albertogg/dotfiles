@@ -16,6 +16,10 @@ install-homebrew:
 change-shell:
 	scripts/change-shell
 
+# install vim vundle
+install-vundle:
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # This will link hombrew completions for zsh.
 link-brew-completion:
 	ln -s /usr/local/Library/Contributions/brew_zsh_completion.zsh /usr/local/share/zsh/site-functions/_brew
