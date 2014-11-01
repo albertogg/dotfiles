@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-if [ -e `which brew` ]; then
+if [[ -e `which brew` ]]; then
   echo "Hombrew is already installed."
 else
   echo "Installing Hombrew"
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   echo "Done..."
 fi
 
