@@ -10,12 +10,7 @@ cask install qlmarkdown
 cask install quicklook-json
 cask install quicklook-csv
 cask install webp-quicklook
-cask install alfred
-cask install istat-menus
 cask install google-chrome
 cask install macvim
 cask install iterm2-nightly
 cask install gitx-rowanj
-
-# Link installed casks on Alfred.app
-cask alfred link
