@@ -1,5 +1,8 @@
 install_casks() {
 
+    # tap cask versions
+    brew tap caskroom/versions
+
     # Quick Look plugins
     brew cask install qlcolorcode
     brew cask install qlstephen
