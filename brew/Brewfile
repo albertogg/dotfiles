@@ -4,9 +4,11 @@
 update
 
 # System formulae
+install zsh
 install ack
 install coreutils
 install git
+install hg
 install tree
 install wget
 install rsync
@@ -22,6 +24,7 @@ install rbenv-vars
 install rbenv-default-gems
 install tmux
 install tmate
+install go
 
 # Remove outdated versions from the cellar
 cleanup
