@@ -1,6 +1,7 @@
 install: change-shell \
          install-homebrew \
-         install-dotfiles
+         install-dotfiles \
+         install-vundle
 
 # install only the dotfiles.
 install-dotfiles:
