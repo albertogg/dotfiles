@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [[ -e `which brew` ]]; then
   echo "Hombrew is already installed."
@@ -8,10 +8,20 @@ else
   echo "Done..."
 fi
 
-read -p "Would you like to install brew applications? [y/n]" -n 1 -r
+# update homebrew
+echo "Updating homebrew..."
+brew update
+
+read -p "Would you like to install brews? [y/n]" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Installing..."
-    brew bundle brew/Brewfile
-    brew bundle brew/caskfile
+  echo "Installing..."
+  source ./brew/brewfile.sh
+  install_brews
 fi
 
+read -p "Would you like to install casks? [y/n]" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo "Installing..."
+  source ./brew/caskfile.sh
+  install_casks
+fi
