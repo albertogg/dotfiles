@@ -14,7 +14,7 @@ endif
 syntax on
 
 if has("gui_running")
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+  " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
   set clipboard=unnamed
   set go-=L   " remove left scrollbar
   set go-=r   " remove right scrollbar
@@ -40,7 +40,12 @@ set colorcolumn=80
 silent! colorscheme molokai
 " paint the gray line at 80 characters
 highlight ColorColumn guibg=#32322f ctermbg=236
-let g:airline_powerline_fonts = 1
+" vim-airline configuration
+" If a poweline font is available uncomment the line below
+" let g:airline_powerline_fonts = 1
+" remove airline separator left and right, the default is > and <
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 set laststatus=2 " Always show the status line!
 set ruler
 set number
