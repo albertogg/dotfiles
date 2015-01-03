@@ -118,3 +118,10 @@ augroup vimrcEx
   " Go files tab configuration
   autocmd FileType go setl softtabstop=4 shiftwidth=4
 augroup END
+
+"----------------
+" vim-ruby
+"----------------
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_buffer_loading = 1
