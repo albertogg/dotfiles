@@ -1,24 +1,34 @@
 [alias]
-    co = checkout
-    st = status
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-    fu = fetch upstream
+	co = checkout
+	cob = checkout -b
+	st = status
+	sts = status -s
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	fu = fetch upstream
+	rename = branch -m
+	conflicts = diff --name-only --diff-filter=UDX
+	dw = diff --word-diff
+	unstage = reset HEAD --
+	dc = diff --cached
+	g = grep -Ii
+	count = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
+	dad = !"git show-branch -a | ack '\\*' | ack -v \"`git rev-parse --abbrev-ref HEAD`\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'"
 [core]
-    editor = mvim -f
-    autocrlf = input
+	editor = mvim -f
+	autocrlf = input
 [user]
-    name = Alberto Grespan
-    email = albertogrespan@gmail.com
+	name = Alberto Grespan
+	email = albertogrespan@gmail.com
 [push]
-    default = current
+	default = current
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [fetch]
-    prune = true
-    [branch]
-    autosetuprebase = always
+	prune = true
+	[branch]
+	autosetuprebase = always
