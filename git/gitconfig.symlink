@@ -14,7 +14,7 @@
 	count = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
 	dad = !"git show-branch -a | ack '\\*' | ack -v \"`git rev-parse --abbrev-ref HEAD`\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'"
 [core]
-	editor = mvim -f
+	editor = vim
 	autocrlf = input
 [user]
 	name = Alberto Grespan
