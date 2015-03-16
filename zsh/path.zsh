@@ -22,7 +22,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # add coreutils manuals.
 # add homebrew installed packages.
 # last export will be the first in path!
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 ##
