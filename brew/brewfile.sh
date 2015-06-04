@@ -22,10 +22,10 @@ install_brews() {
 
     # development formulae
     brew install rbenv
-    brew install ruby-build
-    brew install rbenv-gem-rehash
     brew install rbenv-vars
+    brew install rbenv-gem-rehash
     brew install rbenv-default-gems
+    brew install ruby-build
     brew install tmux
     brew install tmate
     brew install go
