@@ -12,8 +12,10 @@ install_casks() {
     brew cask install webp-quicklook
 
     # applications
-    brew cask install google-chrome
+    brew cask install dropbox
+    brew cask install transmission
     brew cask install macvim
     brew cask install iterm2-nightly
     brew cask install rowanj-gitx
+    brew cask install virtualbox
 }
