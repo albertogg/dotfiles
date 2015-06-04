@@ -48,7 +48,7 @@ bind r source-file ~/.tmux.conf
 
 # don't touch the name of my window
 set-option -g visual-activity on
-set-option -g visual-content on
+#set-option -g visual-content on
 set-window-option -g monitor-activity on
 set-option -g allow-rename off
 
