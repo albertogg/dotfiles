@@ -15,5 +15,5 @@ install_casks() {
     brew cask install google-chrome
     brew cask install macvim
     brew cask install iterm2-nightly
-    brew cask install gitx-rowanj
+    brew cask install rowanj-gitx
 }
