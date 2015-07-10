@@ -123,11 +123,10 @@ augroup vimrcEx
 
   " Go files tab configuration
   autocmd FileType go setl softtabstop=4 shiftwidth=4
-augroup END
 
-"----------------
-" vim-ruby
-"----------------
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-let g:rubycomplete_buffer_loading = 1
+  " Ruby and Rails autocomplete functionality
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+augroup END
