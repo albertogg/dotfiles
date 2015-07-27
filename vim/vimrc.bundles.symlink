@@ -9,8 +9,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Other bundles.
-Plugin 'tpope/vim-rails.git'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-markdown.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-commentary'
