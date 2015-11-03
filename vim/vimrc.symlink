@@ -6,6 +6,9 @@ set t_Co=256              " Use 256 colors
 set noswapfile
 " fix the backspace in vim
 set backspace=indent,eol,start
+" set clipboard to unnamed so we have proper clipboard copy
+" for vim we need to install hombrew vim for it to work
+set clipboard^=unnamed
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

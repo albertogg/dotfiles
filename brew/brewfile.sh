@@ -16,6 +16,7 @@ install_brews() {
     brew install ssh-copy-id
     brew install ctags
     brew install reattach-to-user-namespace
+    brew install vim
 
     # homebrew cask formulae
     brew install caskroom/cask/brew-cask
