@@ -135,6 +135,13 @@ augroup vimrcEx
 
   " Go files tab configuration
   autocmd FileType go setl softtabstop=4 shiftwidth=4
+  " From and for vim-go plugin
+  autocmd FileType go let g:go_fmt_command = "goimports"
+  autocmd FileType go let g:go_highlight_functions = 1
+  autocmd FileType go let g:go_highlight_methods = 1
+  autocmd FileType go let g:go_highlight_structs = 1
+  autocmd FileType go let g:go_highlight_operators = 1
+  autocmd FileType go let g:go_highlight_build_constraints = 1
 
   " Ruby and Rails autocomplete functionality
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
