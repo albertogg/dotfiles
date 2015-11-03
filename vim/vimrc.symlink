@@ -17,8 +17,7 @@ endif
 syntax on
 
 if has("gui_running")
-  set guifont=Menlo:h12
-  set clipboard=unnamed
+  set guifont=Menlo:h14
   set go-=L   " remove left scrollbar
   set go-=r   " remove right scrollbar
 endif
