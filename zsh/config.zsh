@@ -1,42 +1,28 @@
-# makes color constants available
-autoload -U colors
-colors
-
-# enable colored output from ls, etc
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+# Completion
+setopt always_to_end
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word  # cursor is set to the end of the word if completion is started
+unsetopt menu_complete   # do not autoselect the first completion entry
 
 # History settings
-if [ -z $HISTFILE ]; then
-    HISTFILE=$HOME/.zsh_history
-fi
-HISTSIZE=10000
-SAVEHIST=10000
-
-setopt bang_hist
+setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
-setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history
+setopt bang_hist
 
-# Awesome cd movements
-setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
-DIRSTACKSIZE=5
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
-setopt no_bg_nice # don't nice background tasks
-setopt no_hup
-setopt no_list_beep
-setopt local_options # allow functions to have local options
-setopt local_traps # allow functions to have local traps
-setopt complete_in_word
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
-setopt auto_menu         # show completion menu on succesive tab press
-setopt always_to_end
-
-# Enable extended globing
+# Directories
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_minus
 setopt extendedglob
 
 # vi mode
