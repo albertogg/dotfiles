@@ -8,4 +8,7 @@ install_casks() {
     brew cask install transmission
     brew cask install rowanj-gitx
     brew cask install virtualbox
+
+    # clean
+    brew cask cleanup
 }

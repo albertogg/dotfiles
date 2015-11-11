@@ -8,11 +8,9 @@ fi
 
 # if go is installed export GOPATH
 if command -v go >/dev/null; then
-  if [[ -e "~/go" ]]; then
-    export GOPATH=~/go
-    export PATH="$GOPATH/bin:$PATH"
-    export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-  fi
+  export GOPATH=~/go
+  export PATH="$GOPATH/bin:$PATH"
+  export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 fi
 
 # search for rbenv.
