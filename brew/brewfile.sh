@@ -7,16 +7,11 @@ install_brews() {
 
     # system formulae
     brew install zsh
-    brew install ack
     brew install coreutils
-    brew install git
-    brew install hg
-    brew install tree
-    brew install wget
-    brew install ssh-copy-id
     brew install ctags
+    brew install git
     brew install reattach-to-user-namespace
-    brew install vim
+    brew install vim --override-system-vi
 
     # homebrew cask formulae
     brew install caskroom/cask/brew-cask
