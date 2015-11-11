@@ -7,14 +7,16 @@ if [[ -e "/Applications/Postgres.app" ]]; then
 fi
 
 # if go is installed export GOPATH
-if [[ ( -e `which go` && -e "$HOME/go" ) ]]; then
-  export GOPATH=$HOME/go
-  export PATH="$GOPATH/bin:$PATH"
-  export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+if command -v go >/dev/null; then
+  if [[ -e "~/go" ]]; then
+    export GOPATH=~/go
+    export PATH="$GOPATH/bin:$PATH"
+    export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+  fi
 fi
 
 # search for rbenv.
-if which rbenv > /dev/null; then
+if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)";
 fi
 
