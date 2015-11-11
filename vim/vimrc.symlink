@@ -62,7 +62,7 @@ set ignorecase
 set incsearch
 set showmatch
 set list
-set listchars=eol:¬,trail:·
+set listchars=tab:»·,eol:¬,trail:·
 
 "----------------
 " Mappings
