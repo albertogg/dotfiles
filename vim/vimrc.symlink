@@ -139,8 +139,8 @@ augroup vimrcEx
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
   " vim-rspec
   autocmd FileType ruby,eruby let g:rspec_command = "!bundle exec rspec {spec}"
-  autocmd FileType ruby,eruby map <Leader>t :call RunCurrentSpecFile()<CR>
-  autocmd FileType ruby,eruby map <Leader>s :call RunNearestSpec()<CR>
-  autocmd FileType ruby,eruby map <Leader>l :call RunLastSpec()<CR>
-  autocmd FileType ruby,eruby map <Leader>a :call RunAllSpecs()<CR>
+  autocmd FileType ruby,eruby nmap <Leader>t :call RunCurrentSpecFile()<CR>
+  autocmd FileType ruby,eruby nmap <Leader>s :call RunNearestSpec()<CR>
+  autocmd FileType ruby,eruby nmap <Leader>l :call RunLastSpec()<CR>
+  autocmd FileType ruby,eruby nmap <Leader>a :call RunAllSpecs()<CR>
 augroup END
