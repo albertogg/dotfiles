@@ -90,16 +90,6 @@ inoremap <C-Space> <C-x><C-u>
 let g:ctrlp_show_hidden = 1
 
 "----------------
-"vim-rspec
-"----------------
-let g:rspec_runner = "os_x_iterm2"
-let g:rspec_command = "bundle exec rspec {spec}"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-"----------------
 " functions
 "----------------
 function! StripTrailingWhitespaces()
@@ -149,4 +139,10 @@ augroup vimrcEx
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  " vim-rspec
+  autocmd FileType ruby,eruby let g:rspec_command = "!bundle exec rspec {spec}"
+  autocmd FileType ruby,eruby map <Leader>t :call RunCurrentSpecFile()<CR>
+  autocmd FileType ruby,eruby map <Leader>s :call RunNearestSpec()<CR>
+  autocmd FileType ruby,eruby map <Leader>l :call RunLastSpec()<CR>
+  autocmd FileType ruby,eruby map <Leader>a :call RunAllSpecs()<CR>
 augroup END
