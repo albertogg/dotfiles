@@ -13,17 +13,17 @@ if command -v go >/dev/null; then
   export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 fi
 
-# search for rbenv.
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init -)";
-fi
-
 # add coreutils.
 # add coreutils manuals.
 # add homebrew installed packages.
 # last export will be the first in path!
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+#
+# search for rbenv.
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init -)";
+fi
 
 # remove duplicates from PATH.
 typeset -U PATH
