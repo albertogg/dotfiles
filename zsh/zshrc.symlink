@@ -31,6 +31,3 @@ do
 done
 
 unset config_files
-
-# Load custom theme
-source $ZSH/**/*.zsh-theme

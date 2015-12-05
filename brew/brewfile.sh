@@ -7,16 +7,13 @@ install_brews() {
 
     # system formulae
     brew install zsh
-    brew install ack
+    brew install tmux
+    brew install tmate
     brew install coreutils
-    brew install git
-    brew install hg
-    brew install tree
-    brew install wget
-    brew install ssh-copy-id
     brew install ctags
+    brew install git
     brew install reattach-to-user-namespace
-    brew install vim
+    brew install vim --override-system-vi
 
     # homebrew cask formulae
     brew install caskroom/cask/brew-cask
@@ -27,8 +24,6 @@ install_brews() {
     brew install rbenv-gem-rehash
     brew install rbenv-default-gems
     brew install ruby-build
-    brew install tmux
-    brew install tmate
     brew install go
 
     # clean up

@@ -1,6 +1,7 @@
 install: change-shell \
          install-homebrew \
          install-dotfiles \
+         create-golang-workspace \
          install-vundle
 
 # install only the dotfiles.
@@ -27,7 +28,10 @@ link-brew-completion:
 
 # Will run osx custom comfiguration based on the mathias bynens osx.sh.
 install-osx:
-	system/osx
+	osx/setup.sh
+
+create-golang-workspace:
+	mkdir -p ~/go
 
 # This command will only remove the linkend dotfiles.
 uninstall:
