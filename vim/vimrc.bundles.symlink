@@ -26,6 +26,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'honza/dockerfile.vim.git'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'godlygeek/tabular'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
