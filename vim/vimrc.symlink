@@ -2,20 +2,22 @@ scriptencoding utf-8
 set encoding=utf-8
 
 set nocompatible
-set t_Co=256              " Use 256 colors
+" Use 256 colors
+set t_Co=256
 set noswapfile
 " fix the backspace in vim
 set backspace=indent,eol,start
 " set clipboard to unnamed so we have proper clipboard copy
 " for vim we need to install hombrew vim for it to work
 set clipboard^=unnamed
-
+" read bundle for Vundle plugins and config
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-syntax on
-
+"----------------
+" GUI
+"----------------
 if has("gui_running")
   set guifont=Menlo:h14
   set go-=L   " remove left scrollbar
@@ -25,6 +27,7 @@ endif
 "----------------
 " Text Formating
 "----------------
+syntax on
 set autoindent
 set softtabstop=2
 set shiftwidth=2
@@ -76,14 +79,11 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <silent> <leader>V :so ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <leader><space> :call StripTrailingWhitespaces()<CR>
-
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc
 imap ,. <C-X><C-O>
-
 " Autocomplete for rails.vim
 inoremap <C-Space> <C-x><C-u>
-
 "----------------
 "CtrlP
 "----------------
@@ -111,19 +111,14 @@ augroup vimrcEx
   autocmd!
   " strip trailing whitespace on Ruby buffer saves
   autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
-
   " set spelling correction when in markdown files and in gitcommits
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
-
   " set md file type to markdown
   autocmd BufRead,BufNewFile *.md set filetype=markdown
-
   " set spell in gitcommits
   autocmd FileType gitcommit setlocal spell
-
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
-
   " Go files tab configuration
   autocmd FileType go setl softtabstop=4 shiftwidth=4
   " From and for vim-go plugin
@@ -133,7 +128,6 @@ augroup vimrcEx
   autocmd FileType go let g:go_highlight_structs = 1
   autocmd FileType go let g:go_highlight_operators = 1
   autocmd FileType go let g:go_highlight_build_constraints = 1
-
   " Ruby and Rails autocomplete functionality
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
