@@ -15,4 +15,4 @@ set_git_prompt_color() {
 }
 
 setopt promptsubst
-export PS1='%B%F{044}%c%f%b%{$reset_color%}$(git_prompt_info) %# '
+PS1='%B%F{044}%c%f%b%{$reset_color%}$(git_prompt_info) %# '
