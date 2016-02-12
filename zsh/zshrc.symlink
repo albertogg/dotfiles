@@ -8,6 +8,12 @@ export ZSH="$HOME/.dotfiles"
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
+# load custom executable functions
+for function in $ZSH/zsh/functions/*
+do
+  source $function
+done
+
 # Load all path.zsh files
 for file in ${(M)config_files:#*/path.zsh}
 do
