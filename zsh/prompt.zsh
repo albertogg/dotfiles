@@ -11,8 +11,5 @@ parse_git_dirty() {
   fi
 }
 
-set_git_prompt_color() {
-}
-
 setopt promptsubst
 PS1='%B%F{044}%c%f%b%{$reset_color%}$(git_prompt_info) %# '
