@@ -49,7 +49,7 @@ set omnifunc=syntaxcomplete#Complete
 " UI
 "----------------
 silent! colorscheme molokai
-" paint the gray line at 80 characters
+" paint colorcolumn with a custom color
 highlight ColorColumn guibg=#32322f ctermbg=236
 " vim-airline configuration
 " If a poweline font is available uncomment the line below
