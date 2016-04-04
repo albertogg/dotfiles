@@ -15,9 +15,9 @@ set autowrite                  " Automatically :write before running commands
 " for vim we need to install hombrew vim for it to work
 set clipboard^=unnamed
 
-" read bundle for Vundle plugins and config
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+" manage plugins using Vim plug
+if filereadable(expand("~/.vimrc.plugins"))
+  source ~/.vimrc.plugins
 endif
 
 "----------------
