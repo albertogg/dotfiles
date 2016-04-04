@@ -1,23 +1,23 @@
 call plug#begin('~/.vim/plugged')
 " Plugins
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/molokai'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-hclfmt' " format files
+Plug 'b4b4r07/vim-hcl'  " syntax highlighting
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-markdown', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
-Plug 'fatih/molokai'
-Plug 'fatih/vim-hclfmt'
-Plug 'b4b4r07/vim-hcl'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'bling/vim-airline'
-Plug 'honza/dockerfile.vim'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'honza/dockerfile.vim'
 Plug 'godlygeek/tabular'
 " Add plugins to &runtimepath
 call plug#end()
