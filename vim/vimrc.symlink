@@ -1,15 +1,20 @@
+"----------------
+" general
+"----------------
 scriptencoding utf-8
 set encoding=utf-8
+set nocompatible               " no compatible
+set t_Co=256                   " Use 256 colors
+set backspace=indent,eol,start " fix the backspace in vim
+set nobackup
+set nowritebackup
+set noswapfile                 " Don't write swp file
+set autowrite                  " Automatically :write before running commands
 
-set nocompatible
-" Use 256 colors
-set t_Co=256
-set noswapfile
-" fix the backspace in vim
-set backspace=indent,eol,start
 " set clipboard to unnamed so we have proper clipboard copy
 " for vim we need to install hombrew vim for it to work
 set clipboard^=unnamed
+
 " read bundle for Vundle plugins and config
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -23,6 +28,33 @@ if has("gui_running")
   set go-=L   " remove left scrollbar
   set go-=r   " remove right scrollbar
 endif
+
+"----------------
+" UI
+"----------------
+silent! colorscheme molokai
+" paint colorcolumn with a custom color
+highlight ColorColumn guibg=#32322f ctermbg=236
+" vim-airline configuration
+" remove airline separator left and right, the default is > and <
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+set laststatus=2                   " Always show the status line!
+set ruler                          " show the cursor position all the time
+set number                         " show numbers
+set numberwidth=5
+set showcmd                        " display incomplete commands
+set listchars=tab:»·,eol:¬,trail:·
+set diffopt+=vertical              " Always use vertical diffs
+set history=50
+set ignorecase
+set incsearch
+set showmatch
+set list
+set completeopt-=preview
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 "----------------
 " Text Formating
@@ -44,29 +76,6 @@ set colorcolumn=80,100
 "----------------
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
-"----------------
-" UI
-"----------------
-silent! colorscheme molokai
-" paint colorcolumn with a custom color
-highlight ColorColumn guibg=#32322f ctermbg=236
-" vim-airline configuration
-" If a poweline font is available uncomment the line below
-" let g:airline_powerline_fonts = 1
-" remove airline separator left and right, the default is > and <
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-set laststatus=2 " Always show the status line!
-set ruler
-set number
-set showcmd
-set ignorecase
-set incsearch
-set showmatch
-set list
-set listchars=tab:»·,eol:¬,trail:·
-set completeopt-=preview
 
 "----------------
 " Mappings
