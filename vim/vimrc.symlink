@@ -93,6 +93,10 @@ imap <S-CR> <CR><CR>end<Esc>-cc
 imap ,. <C-X><C-O>
 " Autocomplete for rails.vim
 inoremap <C-Space> <C-x><C-u>
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 "----------------
 "CtrlP
 "----------------
