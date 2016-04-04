@@ -18,6 +18,6 @@ Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'honza/dockerfile.vim'
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 " Add plugins to &runtimepath
 call plug#end()
