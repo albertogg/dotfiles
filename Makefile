@@ -6,34 +6,34 @@ install: shell \
          golang \
          vim
 
-# install only the dotfiles.
-dotfiles:
-	scripts/install
+# Shell will change the default shell to zsh
+shell:
+	scripts/shell
 
 # install hombrew and applications if the user wants.
 # The applications that are going to be installed are in the
 # brew directory.
 brew:
-	scripts/install-homebrew
+	scripts/brew
 
-# change shell will change the default shell to zsh.
-shell:
-	scripts/change-shell
-
-# install vim-plug and vim plugins with vim-plug
-vim:
-	scripts/install-vim
-
-# Will run osx custom comfiguration based on the mathias bynens osx.sh.
-osx:
-	osx/setup.sh
+# install only the dotfiles.
+dotfiles:
+	scripts/install
 
 # Golang things
 golang:
-	scripts/install-golang
+	scripts/golang
 
-# This command will only remove the linkend dotfiles.
+# Install vim-plug and vim plugins with vim-plug
+vim:
+	scripts/vim
+
+# Will run osx custom comfiguration based on the mathias bynens osx.sh
+osx:
+	osx/setup.sh
+
+# This command will only remove the linkend dotfiles
 uninstall:
 	scripts/uninstall
 
-.PHONY: all install dotfiles brew shell vim osx golang uninstall
+.PHONY: all install shell brew dotfiles golang vim osx uninstall
