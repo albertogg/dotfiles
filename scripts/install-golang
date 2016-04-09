@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+if command -v mkdir >/dev/null; then
+    echo "Creating golang user workdir..."
+	mkdir -p ~/go
+fi
