@@ -8,6 +8,7 @@ Dependencies needed for the installation.
 
 - git
 - make
+- curl
 
 Simply clone the repo.
 

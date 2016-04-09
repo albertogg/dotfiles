@@ -1,44 +1,39 @@
-install: change-shell \
-         install-homebrew \
-         install-dotfiles \
-         create-golang-workspace \
-         install-vim-plug \
-         install-vim-plugins
+all: install
+
+install: shell \
+         brew \
+         dotfiles \
+         golang \
+         vim
 
 # install only the dotfiles.
-install-dotfiles:
+dotfiles:
 	scripts/install
 
 # install hombrew and applications if the user wants.
 # The applications that are going to be installed are in the
 # brew directory.
-install-homebrew:
+brew:
 	scripts/install-homebrew
 
 # change shell will change the default shell to zsh.
-change-shell:
+shell:
 	scripts/change-shell
 
-# install vim-plug
-install-vim-plug:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# install all vim plugins using vim-plug
-install-vim-plugins:
-	vim PlugInstall +qall
-
-# This will link hombrew completions for zsh.
-link-brew-completion:
-	ln -s /usr/local/Library/Contributions/brew_zsh_completion.zsh /usr/local/share/zsh/site-functions/_brew
+# install vim-plug and vim plugins with vim-plug
+vim:
+	scripts/install-vim
 
 # Will run osx custom comfiguration based on the mathias bynens osx.sh.
-install-osx:
+osx:
 	osx/setup.sh
 
-create-golang-workspace:
-	mkdir -p ~/go
+# Golang things
+golang:
+	scripts/install-golang
 
 # This command will only remove the linkend dotfiles.
 uninstall:
 	scripts/uninstall
+
+.PHONY: all install dotfiles brew shell vim osx golang uninstall
