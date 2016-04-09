@@ -12,6 +12,7 @@
 	dc = diff --cached
 	g = grep -Ii
 	count = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
+	discard = checkout --
 [core]
 	editor = vim
 	autocrlf = input
