@@ -16,7 +16,7 @@ Plug 'tpope/vim-markdown', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec'
 Plug 'honza/dockerfile.vim'
 Plug 'junegunn/vim-easy-align'
 " Add plugins to &runtimepath
