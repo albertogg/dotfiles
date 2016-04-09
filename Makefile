@@ -2,7 +2,8 @@ install: change-shell \
          install-homebrew \
          install-dotfiles \
          create-golang-workspace \
-         install-vim-plug
+         install-vim-plug \
+         install-vim-plugins
 
 # install only the dotfiles.
 install-dotfiles:
@@ -22,6 +23,10 @@ change-shell:
 install-vim-plug:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install all vim plugins using vim-plug
+install-vim-plugins:
+	vim PlugInstall +qall
 
 # This will link hombrew completions for zsh.
 link-brew-completion:
