@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 if [[ -e `which brew` ]]; then
   echo "Hombrew is already installed."
