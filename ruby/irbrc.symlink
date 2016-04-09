@@ -1,5 +1,5 @@
-require 'irb/completion'
-require 'pp'
+require "irb/completion"
+require "pp"
 
 # history file
 IRB.conf[:EVAL_HISTORY] = 1000

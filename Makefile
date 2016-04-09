@@ -1,9 +1,10 @@
 all: install
 
-install: shell \
+install: dotfiles \
+         shell \
          brew \
-         dotfiles \
          golang \
+         ruby \
          vim
 
 # Shell will change the default shell to zsh
@@ -24,6 +25,10 @@ dotfiles:
 golang:
 	scripts/golang
 
+# Ruby things
+ruby:
+	scripts/ruby
+
 # Install vim-plug and vim plugins with vim-plug
 vim:
 	scripts/vim
@@ -36,4 +41,4 @@ osx:
 uninstall:
 	scripts/uninstall
 
-.PHONY: all install shell brew dotfiles golang vim osx uninstall
+.PHONY: all install shell brew dotfiles golang ruby vim osx uninstall

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if command -v rbenv >/dev/null; then
+    echo "Default gems..."
+    echo "bundler" > $(rbenv root)/default-gems
+    echo "pry" >> $(rbenv root)/default-gems
+fi
