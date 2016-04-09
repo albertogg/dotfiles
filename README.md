@@ -1,6 +1,6 @@
 # albertogg dotfiles
 
-![v5terminal](https://www.dropbox.com/s/zybadcuwcm5lyda/v5terminal.png?dl=0)
+![v5terminal](https://dl.dropboxusercontent.com/s/zybadcuwcm5lyda/v5terminal.png)
 
 ## Installation
 
