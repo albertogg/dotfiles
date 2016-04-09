@@ -3,10 +3,11 @@ install_casks() {
     brew tap caskroom/cask
     brew tap caskroom/versions
 
-    # applications
-    brew cask install dropbox
-    brew cask install transmission
-    brew cask install gitup
+    # applications, ensure they are linked in the /Applications dir
+    brew cask install --appdir="/Applications" appcleaner
+    brew cask install --appdir="/Applications" dropbox
+    brew cask install --appdir="/Applications" transmission
+    brew cask install --appdir="/Applications" gitup
 
     # clean
     brew cask cleanup
