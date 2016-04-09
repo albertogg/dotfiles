@@ -1,5 +1,5 @@
 alias g='git'
-alias gst='git status'
 alias gss='git status -s'
 alias gco='git checkout'
-alias gcom='git checkout master'
+alias gitx='open -a GitUp'
+alias giup='open -a GitUp'
