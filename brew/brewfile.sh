@@ -1,5 +1,6 @@
 install_brews() {
     # system formulae
+    brew install openssl
     brew install zsh
     brew install tmux
     brew install tmate
