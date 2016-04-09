@@ -7,7 +7,6 @@ install_casks() {
     brew cask install dropbox
     brew cask install transmission
     brew cask install gitup
-    brew cask install virtualbox
 
     # clean
     brew cask cleanup
