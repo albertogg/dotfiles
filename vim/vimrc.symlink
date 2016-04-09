@@ -101,6 +101,7 @@ nmap ga <Plug>(EasyAlign)
 "CtrlP
 "----------------
 let g:ctrlp_show_hidden = 1
+set wildignore+=*/node_modules/*,*/vendor/*
 
 "----------------
 " functions
