@@ -1,10 +1,4 @@
-#! /usr/bin/env sh
-
 install_brews() {
-
-    # taps
-    brew tap nviennot/tmate
-
     # system formulae
     brew install zsh
     brew install tmux
