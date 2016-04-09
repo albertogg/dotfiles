@@ -2,7 +2,7 @@ install: change-shell \
          install-homebrew \
          install-dotfiles \
          create-golang-workspace \
-         install-vundle
+         install-vim-plug
 
 # install only the dotfiles.
 install-dotfiles:
@@ -18,9 +18,10 @@ install-homebrew:
 change-shell:
 	scripts/change-shell
 
-# install vim vundle
-install-vundle:
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# install vim-plug
+install-vim-plug:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # This will link hombrew completions for zsh.
 link-brew-completion:
