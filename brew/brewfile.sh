@@ -9,9 +9,6 @@ install_brews() {
     brew install reattach-to-user-namespace
     brew install vim --override-system-vi
 
-    # homebrew cask formulae
-    brew install caskroom/cask/brew-cask
-
     # development formulae
     brew install rbenv
     brew install rbenv-vars

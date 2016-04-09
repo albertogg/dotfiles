@@ -1,6 +1,6 @@
 install_casks() {
-
     # tap cask versions
+    brew tap caskroom/cask
     brew tap caskroom/versions
 
     # applications
