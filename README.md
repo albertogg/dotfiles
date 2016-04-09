@@ -1,5 +1,7 @@
 # albertogg dotfiles
 
+![v5terminal](https://www.dropbox.com/s/zybadcuwcm5lyda/v5terminal.png?dl=0)
+
 ## Installation
 
 Dependencies needed for the installation.
