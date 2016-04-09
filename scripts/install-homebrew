@@ -25,3 +25,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   source ./brew/caskfile.sh
   install_casks
 fi
+
+read -p "Would you like to link brew zsh completions? [y/n]" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo "Linking brew completions..."
+  ln -s /usr/local/Library/Contributions/brew_zsh_completion.zsh /usr/local/share/zsh/site-functions/_brew
+fi
