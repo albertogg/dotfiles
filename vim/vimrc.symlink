@@ -1,3 +1,29 @@
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/molokai'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-hclfmt' " format files
+Plug 'b4b4r07/vim-hcl'  " syntax highlighting
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-markdown', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec'
+Plug 'honza/dockerfile.vim'
+Plug 'junegunn/vim-easy-align'
+
+" Add plugins to &runtimepath
+call plug#end()
+
 "----------------
 " general
 "----------------
@@ -14,11 +40,6 @@ set autowrite                  " Automatically :write before running commands
 " set clipboard to unnamed so we have proper clipboard copy
 " for vim we need to install hombrew vim for it to work
 set clipboard^=unnamed
-
-" manage plugins using Vim plug
-if filereadable(expand("~/.vimrc.plugins"))
-  source ~/.vimrc.plugins
-endif
 
 "----------------
 " GUI
