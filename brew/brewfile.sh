@@ -17,6 +17,7 @@ install_brews() {
     brew install rbenv-default-gems
     brew install ruby-build
     brew install go
+    brew install jenv
 
     # clean up
     brew cleanup
