@@ -24,37 +24,34 @@ endif
 " GUI
 "----------------
 if has("gui_running")
-  set guifont=Menlo:h14
-  set go-=L   " remove left scrollbar
-  set go-=r   " remove right scrollbar
+  set guifont=Menlo:h14 " Bigger and different font
+  set go-=L             " Remove left scrollbar
+  set go-=r             " Remove right scrollbar
 endif
 
 "----------------
 " UI
 "----------------
-silent! colorscheme molokai
 " paint colorcolumn with a custom color
 highlight ColorColumn guibg=#32322f ctermbg=236
-" vim-airline configuration
-" remove airline separator left and right, the default is > and <
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+silent! colorscheme molokai        " Use molokai colorscheme
+set colorcolumn=80,100             " Delimiter line at 80 and 100 characters
 set laststatus=2                   " Always show the status line!
-set ruler                          " show the cursor position all the time
-set number                         " show numbers
-set numberwidth=5
-set showcmd                        " display incomplete commands
-set listchars=tab:»·,eol:¬,trail:·
+set ruler                          " Show the cursor position all the time
+set number                         " Show numbers
+set numberwidth=5                  " Numbers 5 character width
+set showcmd                        " Display incomplete commands
+set list                           " Show list of characters
+set listchars=tab:»·,eol:¬,trail:· " Invisible characters notations
 set diffopt+=vertical              " Always use vertical diffs
-set history=50
-set ignorecase
-set incsearch
-set showmatch
-set list
-set completeopt-=preview
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+set history=50                     " Lines of history
+set ignorecase                     " Search case insensitive
+set incsearch                      " Show matches while typing
+set hlsearch                       " Highlight search results
+set showmatch                      " Show matching brackets flickering
+set completeopt-=preview           " Don't pop-up completions code previews
+set splitbelow                     " Open new split panes at the bottom
+set splitright                     " Open new split panes to right
 
 "----------------
 " Text Formating
@@ -64,12 +61,11 @@ set autoindent
 set softtabstop=2
 set shiftwidth=2
 set tabstop=4
-set expandtab
+set expandtab   " Use an amount of spaces to expand a tab
 set nosmarttab
 set wrap
 set linebreak
-set textwidth=0
-set colorcolumn=80,100
+set textwidth=0 " Ensure that long lines will not be broken when pasting
 
 "----------------
 " Autocomplete
@@ -88,6 +84,8 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <silent> <leader>V :so ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <leader><space> :call StripTrailingWhitespaces()<CR>
+" Clear highlighted search text
+nnoremap <silent> <Esc><Esc> :let @/=""<CR>
 " Shift + return to add end to ruby functions.
 imap <S-CR> <CR><CR>end<Esc>-cc
 imap ,. <C-X><C-O>
@@ -98,10 +96,16 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 "----------------
-"CtrlP
+" CtrlP
 "----------------
 let g:ctrlp_show_hidden = 1
 set wildignore+=*/node_modules/*,*/vendor/*
+
+"----------------
+" vim-airline
+"----------------
+let g:airline_left_sep=''  " remove airline separator left, the default is >
+let g:airline_right_sep='' " remove airline separator right, the default is <
 
 "----------------
 " functions
