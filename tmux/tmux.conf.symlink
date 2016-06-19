@@ -64,7 +64,6 @@ set -g  pane-active-border-fg colour15 #White
 set-option -g message-bg colour26
 set-option -g message-fg colour15
 
-set-option -g status-utf8 on
 set-option -g status-bg colour236
 set-option -g status-fg colour15
 
