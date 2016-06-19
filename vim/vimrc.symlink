@@ -6,7 +6,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/molokai'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt' " format files
 Plug 'b4b4r07/vim-hcl'  " syntax highlighting
 Plug 'tpope/vim-fugitive'
@@ -17,7 +17,7 @@ Plug 'tpope/vim-markdown', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'honza/dockerfile.vim'
 Plug 'junegunn/vim-easy-align'
 
