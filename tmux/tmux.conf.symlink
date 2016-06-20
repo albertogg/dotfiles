@@ -1,75 +1,53 @@
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+# Thoughtbot tmux config with some mods
+# improve colors
+set -g default-terminal 'screen-256color'
 
-# decent look
-set -g default-terminal "screen-256color"
-
-# increase scrollback lines
-set -g history-limit 10000
-
-# remap prefix to contro + a; because I hate the default!
-set -g prefix C-a
-unbind C-b
-bind C-a send-prefix
-
-# bind old windows behavior (pre 1.9)
-unbind '"'
-unbind |
-unbind %
-unbind c
-bind '"' split-window -c "#{pane_current_path}"
-bind | split-window -h -c "#{pane_current_path}"
-bind c new-window -c "#{pane_current_path}"
-
-# use vi mode
+# act like vim
 setw -g mode-keys vi
-set -g status-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind-key -r C-h select-window -t :-
+bind-key -r C-l select-window -t :+
 
-# Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+set -g prefix2 C-s
 
-# Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+# bind pipe to split window in the current path
+unbind |
+bind | split-window -c "#{pane_current_path}" -h
 
-# set window numbering starting from 1
+# start window numbers at 1 to match keyboard order with tmux window order
 set -g base-index 1
+set-window-option -g pane-base-index 1
 
 # renumber windows sequentially after closing any of them
 set -g renumber-windows on
 
-# quick pane cycling! Thoughtbot like.
-unbind ^A
-bind ^A select-pane -t :.+
+# increase scrollback lines
+set -g history-limit 10000
 
-# force a reload of the config file
-unbind r
-bind r source-file ~/.tmux.conf
+# prefix -> back-one-character
+bind-key C-b send-prefix
+# prefix-2 -> forward-incremental-history-search
+bind-key C-s send-prefix -2
 
-# don't touch the name of my window
-set-option -g visual-activity on
-#set-option -g visual-content on
-set-window-option -g monitor-activity on
-set-option -g allow-rename off
+# Faster escape sequences (default is 500ms).
+# This helps when exiting insert mode in Vim: http://superuser.com/a/252717/65504
+set -s escape-time 50
 
-# enable mouse support (works in iTerm)
-set -g mouse on
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
-bind -n WheelDownPane select-pane -t= \; send-keys -M
-
-# my tmux color theme.
-set -g  pane-border-fg colour15 #White
-set -g  pane-active-border-fg colour15 #White
-
-set-option -g message-bg colour26
-set-option -g message-fg colour15
-
-set-option -g status-bg colour236
-set-option -g status-fg colour15
-
-set-window-option -g window-status-current-bg colour26
-set-window-option -g window-status-current-fg colour15
-set-window-option -g window-status-bg colour38
-set-window-option -g window-status-fg colour236
-
-set-window-option -g window-status-current-attr bold
+# Colors for the status bar, session and window list
+# These colors are from mislav dotfiles,
+# https://github.com/mislav/dotfiles/blob/master/tmux.conf
+# status bar
+set -g status-fg colour8
+set -g status-bg colour234
+# current session
+set -g status-left ' #S '
+set -g status-left-length 15
+set -g status-left-fg colour229
+set -g status-left-bg colour166
+# window list
+set -g window-status-format "#[fg=colour8] #I #[fg=colour231]#W#[fg=colour166]#F "
+set -g window-status-current-format "#[fg=colour117,bg=colour31] #I #[fg=colour231]#W#[fg=colour234]#F "
+set -g window-status-separator ""
