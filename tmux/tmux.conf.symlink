@@ -13,9 +13,13 @@ bind-key -r C-l select-window -t :+
 
 set -g prefix2 C-s
 
-# bind pipe to split window in the current path
+# Have new windows and panes open in the current directory including the custom
+# pipe for vertical splits
 unbind |
-bind | split-window -c "#{pane_current_path}" -h
+bind |   split-window -c "#{pane_current_path}" -h
+bind %   split-window -c "#{pane_current_path}" -h
+bind '"' split-window -c "#{pane_current_path}"
+bind c   new-window   -c "#{pane_current_path}"
 
 # start window numbers at 1 to match keyboard order with tmux window order
 set -g base-index 1
