@@ -12,7 +12,6 @@ install_brews() {
     # development formulae
     brew install rbenv
     brew install rbenv-vars
-    brew install rbenv-gem-rehash
     brew install rbenv-default-gems
     brew install ruby-build
     brew install go
