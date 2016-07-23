@@ -7,7 +7,7 @@ install_brews() {
     brew install coreutils
     brew install ctags
     brew install git
-    brew install vim --override-system-vi
+    brew install vim --with-lua --with-override-system-vi
 
     # development formulae
     brew install rbenv
