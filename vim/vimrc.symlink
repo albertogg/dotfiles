@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Shougo/neocomplete'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/molokai'
 Plug 'fatih/vim-go'
@@ -133,6 +134,16 @@ set wildignore+=*/node_modules/*,*/vendor/*
 "----------------
 let g:airline_left_sep=''  " remove airline separator left, the default is >
 let g:airline_right_sep='' " remove airline separator right, the default is <
+
+"----------------
+" neocomplete
+"----------------
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 "----------------
 " functions
