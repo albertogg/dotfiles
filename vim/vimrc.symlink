@@ -98,7 +98,13 @@ set omnifunc=syntaxcomplete#Complete
 " Mappings
 "----------------
 let mapleader = ','
+" Escape insert mode with jj
 inoremap jj <Esc>
+" Move through splits with ctrl + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 nnoremap <leader>. :CtrlP<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
