@@ -13,7 +13,7 @@ Dependencies needed for the installation.
 Simply clone the repo.
 
 ```sh
-$ git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
+git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
 ```
 
 Running the install script will do the following:
@@ -25,7 +25,7 @@ Running the install script will do the following:
 - Install `vim-plug` and all vim plugins
 
 ```sh
-$ make install
+make install
 ```
 
 > The symlinks are linked by their extension. If the file only contain a `.symlink`
@@ -36,7 +36,7 @@ $ make install
 If you want to install my OS X settings just run the following command:
 
 ```sh
-$ make install-osx
+make install-osx
 ```
 
 It's based on Mathias Bynens `http://mths.be/osx`.
@@ -49,7 +49,7 @@ install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
 To achieve this you can use this command:
 
 ```sh
-$ make install-hombrew
+make install-hombrew
 ```
 
 ## License
