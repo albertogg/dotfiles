@@ -38,8 +38,8 @@ set nowritebackup
 set noswapfile                 " Don't write swp file
 set autowrite                  " Automatically :write before running commands
 
-" set clipboard to unnamed so we have proper clipboard copy
-" for vim we need to install hombrew vim for it to work
+" set clipboard to unnamed so we have proper clipboard copy for vim we need to
+" install hombrew vim for it to work
 set clipboard^=unnamed
 
 "----------------
@@ -83,11 +83,12 @@ set autoindent
 set softtabstop=2
 set shiftwidth=2
 set tabstop=4
-set expandtab   " Use an amount of spaces to expand a tab
+set expandtab        " Use an amount of spaces to expand a tab
 set nosmarttab
 set wrap
 set linebreak
-set textwidth=0 " Ensure that long lines will not be broken when pasting
+set textwidth=0      " Ensure that long lines will not be broken when pasting
+set complete+=kspell " Autocomplete with dictionary words when spell check is on
 
 "----------------
 " Autocomplete
@@ -138,11 +139,11 @@ let g:airline_right_sep='' " remove airline separator right, the default is <
 "----------------
 " neocomplete
 "----------------
-" Use neocomplete.
+" Use neocomplete
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
+" Use smartcase
 let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
+" Set minimum syntax keyword length
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 "----------------
@@ -167,14 +168,12 @@ augroup vimrcEx
   autocmd!
   " strip trailing whitespace on Ruby buffer saves
   autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
-  " set spelling correction when in markdown files and in gitcommits
-  autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
-  " set md file type to markdown
+  " Set filetype, textwidth and spell checking to markdown files
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
+  autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
   " set spell in gitcommits
   autocmd FileType gitcommit setlocal spell
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
   " Go files tab configuration
   autocmd FileType go setl softtabstop=4 shiftwidth=4
   " From and for vim-go plugin
