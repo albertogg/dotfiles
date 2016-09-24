@@ -18,7 +18,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'janko-m/vim-test',
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'junegunn/vim-easy-align'
 
@@ -177,19 +177,13 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 "----------------
-" functions
+" vim-test
 "----------------
-function! StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let previous_search=@/
-    let previous_cursor_line = line(".")
-    let previous_cursor_column = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=previous_search
-    call cursor(previous_cursor_line, previous_cursor_column)
-endfunction
+nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
 
 "----------------
 " autogroups
@@ -231,10 +225,19 @@ augroup vimrcEx
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  " vim-rspec
-  autocmd FileType ruby,eruby let g:rspec_command = "!bundle exec rspec {spec}"
-  autocmd FileType ruby,eruby nmap <Leader>t :call RunCurrentSpecFile()<CR>
-  autocmd FileType ruby,eruby nmap <Leader>s :call RunNearestSpec()<CR>
-  autocmd FileType ruby,eruby nmap <Leader>l :call RunLastSpec()<CR>
-  autocmd FileType ruby,eruby nmap <Leader>a :call RunAllSpecs()<CR>
 augroup END
+
+"----------------
+" functions
+"----------------
+function! StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let previous_search=@/
+    let previous_cursor_line = line(".")
+    let previous_cursor_column = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=previous_search
+    call cursor(previous_cursor_line, previous_cursor_column)
+endfunction
