@@ -18,7 +18,7 @@
 	autocrlf = input
 [user]
 	name = Alberto Grespan
-	email = albertogrespan@gmail.com
+	email = alberto@albertogrespan.com
 [push]
 	default = current
 [color]
