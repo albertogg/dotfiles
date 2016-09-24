@@ -19,6 +19,7 @@
 [user]
 	name = Alberto Grespan
 	email = alberto@albertogrespan.com
+	signingkey = 3021C312
 [push]
 	default = current
 [color]
