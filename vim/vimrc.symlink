@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Shougo/neocomplete'
 Plug 'airblade/vim-gitgutter'
@@ -107,7 +107,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <leader>. :CtrlP<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
@@ -127,7 +126,14 @@ nmap ga <Plug>(EasyAlign)
 "----------------
 " CtrlP
 "----------------
-let g:ctrlp_show_hidden = 1
+nnoremap <leader>. :CtrlP<CR>
+
+let g:ctrlp_map = '<leader>b'
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_use_caching = 1
+
 set wildignore+=*/node_modules/*,*/vendor/*
 
 "----------------
