@@ -1,12 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
 " Plugins
+Plug 'tomasr/molokai'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Shougo/neocomplete'
-Plug 'fatih/molokai'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt' " format files
 Plug 'b4b4r07/vim-hcl'  " syntax highlighting
