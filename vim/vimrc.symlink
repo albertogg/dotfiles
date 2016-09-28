@@ -151,6 +151,7 @@ nnoremap <leader>f :NERDTreeFind<CR>
 " CtrlP
 "----------------
 nnoremap <leader>. :CtrlP<CR>
+nnoremap <leader>t :CtrlPTag<CR>
 
 let g:ctrlp_map = '<leader>b'
 let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -179,7 +180,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 "----------------
 " vim-test
 "----------------
-nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>T :TestFile<CR>
 nnoremap <silent> <Leader>s :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
