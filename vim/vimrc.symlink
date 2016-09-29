@@ -199,10 +199,8 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
   " set spell in gitcommits
   autocmd FileType gitcommit setlocal spell
-  " Java files tab configuration
-  autocmd FileType java setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
-  " XML files configuration
-  autocmd FileType xml setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
+  " Java and XML files configuration
+  autocmd FileType java,xml setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
   " Go files tab configuration
   autocmd FileType go setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
   " From and for vim-go plugin
