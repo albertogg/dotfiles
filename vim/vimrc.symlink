@@ -194,8 +194,9 @@ nnoremap <silent> <leader>gt :TestVisit<CR>
 augroup vimrcEx
   autocmd!
   " strip trailing whitespace on Ruby buffer saves
-  autocmd BufWritePre *.rb,*.markdown,*.md,*.html,*.css,*.scss,*.js call StripTrailingWhitespaces()
-  " Set filetype, textwidth and spell checking to markdown files
+  autocmd BufWritePre *.rb,*.sh,*.md,*.html,*.css,*.scss,*.js,*.java
+            \:call StripTrailingWhitespaces()
+  " set filetype, textwidth and spell checking to markdown files
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
@@ -205,7 +206,7 @@ augroup vimrcEx
   autocmd FileType java,xml setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
   " Go files tab configuration
   autocmd FileType go setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
-  " From and for vim-go plugin
+  " vim-go plugin
   autocmd FileType go let g:go_fmt_command = "goimports"
   autocmd FileType go let g:go_highlight_functions = 1
   autocmd FileType go let g:go_highlight_methods = 1
@@ -216,12 +217,13 @@ augroup vimrcEx
   autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
   autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
   autocmd FileType go nmap <Leader>r <Plug>(go-run)
-  autocmd FileType go nmap <Leader>b <Plug>(go-build)
-  autocmd FileType go nmap <Leader>t <Plug>(go-test)
+  autocmd FileType go nmap <Leader>B <Plug>(go-build)
+  autocmd FileType go nmap <Leader>T <Plug>(go-test)
   autocmd FileType go nmap <leader>c <Plug>(go-coverage)
   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
   autocmd FileType go nmap <Leader>s <Plug>(go-implements)
   " Ruby and Rails autocomplete functionality
+  autocmd FileType ruby,eruby setlocal softtabstop=2 tabstop=2 shiftwidth=2
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
