@@ -11,3 +11,5 @@ tmp/**/*
 !tmp/cache/.keep
 .java-version
 .rbenv-vars
+.idea
+*.iml
