@@ -32,8 +32,8 @@ ruby:
 vim:
 	scripts/vim
 
-# Will run osx custom comfiguration based on the mathias bynens osx.sh
-osx:
+# Will run macOS custom comfiguration based on the mathias bynens macos.sh
+macos:
 	macos/setup.sh
 
 # This command will only remove the linkend dotfiles
