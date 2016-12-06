@@ -8,5 +8,5 @@ fi
 
 if command -v vim >/dev/null; then
   echo "Installing vim plugins..."
-  vim PlugInstall +qall
+  vim +PlugInstall +qall
 fi
