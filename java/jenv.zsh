@@ -1,4 +1,4 @@
 # set the environment with jenv
-if command -v jenv  >/dev/null; then
+if command -v jenv >/dev/null; then
   eval "$(jenv init -)";
 fi

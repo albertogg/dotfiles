@@ -2,6 +2,7 @@
 
 if command -v rbenv >/dev/null; then
   echo "Default gems..."
+  mkdir -p $(rbenv root)
   echo "bundler" > $(rbenv root)/default-gems
   echo "pry" >> $(rbenv root)/default-gems
 fi
