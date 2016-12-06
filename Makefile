@@ -34,10 +34,10 @@ vim:
 
 # Will run macOS custom comfiguration based on the mathias bynens macos.sh
 macos:
-	macos/setup.sh
+	scripts/macos
 
 # This command will only remove the linkend dotfiles
 uninstall:
 	scripts/uninstall
 
-.PHONY: all install shell brew dotfiles golang ruby vim osx uninstall
+.PHONY: all install shell brew dotfiles golang ruby vim macos uninstall
