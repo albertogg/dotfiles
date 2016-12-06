@@ -14,13 +14,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'janko-m/vim-test',
-Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'junegunn/vim-easy-align'
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -160,6 +160,7 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_use_caching = 1
+let g:ctrlp_show_hidden = 1
 
 set wildignore+=*/node_modules/*,*/vendor/*
 
@@ -194,8 +195,7 @@ nnoremap <silent> <leader>gt :TestVisit<CR>
 augroup vimrcEx
   autocmd!
   " strip trailing whitespace on Ruby buffer saves
-  autocmd BufWritePre *.rb,*.sh,*.md,*.html,*.css,*.scss,*.js,*.java
-            \:call StripTrailingWhitespaces()
+  autocmd BufWritePre *.rb,*.sh,*.md,*.html,*.css,*.scss,*.js,*.java call StripTrailingWhitespaces()
   " set filetype, textwidth and spell checking to markdown files
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.md,*.markdown setlocal textwidth=80
