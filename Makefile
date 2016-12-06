@@ -34,7 +34,7 @@ vim:
 
 # Will run osx custom comfiguration based on the mathias bynens osx.sh
 osx:
-	osx/setup.sh
+	macos/setup.sh
 
 # This command will only remove the linkend dotfiles
 uninstall:
