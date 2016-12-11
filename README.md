@@ -31,12 +31,12 @@ make install
 > The symlinks are linked by their extension. If the file only contain a `.symlink`
 > extension they are placed in the $HOME dir as a dotfile.
 
-## OS X
+## macOS
 
-If you want to install my OS X settings just run the following command:
+If you want to install my macOS settings just run the following command:
 
 ```sh
-make install-osx
+make macos
 ```
 
 It's based on Mathias Bynens `http://mths.be/osx`.
