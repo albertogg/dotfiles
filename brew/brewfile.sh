@@ -11,6 +11,7 @@ install_brews() {
     brew install --HEAD universal-ctags
     brew install git
     brew install vim --with-lua --with-override-system-vi
+    brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 
     # development formulae
     brew install rbenv

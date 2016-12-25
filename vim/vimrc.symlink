@@ -40,7 +40,7 @@ set autowrite                  " Automatically :write before running commands
 
 " set clipboard to unnamed so we have proper clipboard copy for vim we need to
 " install hombrew vim for it to work
-set clipboard^=unnamed
+set clipboard=unnamed
 
 "----------------
 " GUI
