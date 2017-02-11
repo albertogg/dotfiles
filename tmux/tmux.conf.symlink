@@ -1,6 +1,6 @@
 # Thoughtbot tmux config with some mods
 # improve colors
-set -g default-terminal 'screen-256color'
+set -g default-terminal "screen-256color"
 
 # macOS Sierra needs reattach to user namespace again
 set -g default-shell $SHELL
