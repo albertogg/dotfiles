@@ -5,7 +5,7 @@ Plug 'tomasr/molokai'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplete'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt' " format files
