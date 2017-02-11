@@ -82,9 +82,9 @@ set lazyredraw                     " Redraw only when we need to.
 "----------------
 syntax on
 set autoindent
-set tabstop=2        " Number of visual spaces per TAB
-set softtabstop=2    " Number of spaces in tab when editing
-set shiftwidth=2     " Number of spaces per indentation movement
+set tabstop=4        " Number of visual spaces per TAB
+set softtabstop=4    " Number of spaces in tab when editing
+set shiftwidth=4     " Number of spaces per indentation movement
 set expandtab        " Use an amount of spaces to expand a tab
 set nosmarttab
 set wrap
@@ -204,8 +204,8 @@ augroup vimrcEx
   autocmd FileType gitcommit setlocal spell
   " Java, XML and Make files configuration
   autocmd FileType java,xml,make setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
-  " Go files tab configuration
-  autocmd FileType go setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
+  " Go and Makefiles files tab configuration
+  autocmd FileType go,make setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
   " vim-go plugin
   autocmd FileType go let g:go_fmt_command = "goimports"
   autocmd FileType go let g:go_highlight_functions = 1
