@@ -1,18 +1,18 @@
 [alias]
 	co = checkout
 	cob = checkout -b
-	st = status
-	sts = status -s
+	g = grep -Ii
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	fu = fetch upstream
-	rename = branch -m
-	conflicts = diff --name-only --diff-filter=UDX
 	dw = diff --word-diff
-	unstage = reset HEAD --
 	dc = diff --cached
-	g = grep -Ii
-	count = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
+	rename = branch -m
 	discard = checkout --
+	unstage = reset HEAD --
+	conflicts = diff --name-only --diff-filter=UDX
+	count = !git log --pretty=oneline | wc -l
+	counts = !git shortlog -sn
+	count-branch = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
 [core]
 	editor = vim
 	autocrlf = input
@@ -33,7 +33,7 @@
 [fetch]
 	prune = true
 	[branch]
-	autosetuprebase = always
+		autosetuprebase = always
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
