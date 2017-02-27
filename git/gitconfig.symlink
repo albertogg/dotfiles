@@ -14,7 +14,6 @@
 	counts = !git shortlog -sn
 	count-branch = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
 [core]
-	editor = vim
 	autocrlf = input
 	excludesfile = ~/.gitignore
 [user]
