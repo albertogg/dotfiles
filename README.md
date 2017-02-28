@@ -31,6 +31,16 @@ make install
 > The symlinks are linked by their extension. If the file only contain a `.symlink`
 > extension they are placed in the $HOME dir as a dotfile.
 
+## Setting up Git
+
+Once you've ran the `install` it's time to set up Git with your credentials.
+
+    git config --global user.name "Your Name"
+    git config --global user.email "you@email.com"
+
+Then if possible [tell git about your GPG key][gpg-key]. Once this is ready you
+are good to go.
+
 ## macOS
 
 If you want to install my macOS settings just run the following command:
@@ -57,3 +67,4 @@ make install-hombrew
 [MIT License][mit] as usual!
 
 [mit]: https://github.com/albertogg/dotfiles/blob/master/LICENSE
+[gpg-key]: https://help.github.com/articles/telling-git-about-your-gpg-key/

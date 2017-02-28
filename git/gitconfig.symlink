@@ -1,34 +1,34 @@
+[user]
+	name = Alberto Grespan
+	email = alberto@albertogrespan.com
+	signingkey = 99E748E76A0B181F
+[credential]
+	helper = osxkeychain
 [alias]
+	g = grep -Ii
 	co = checkout
 	cob = checkout -b
-	g = grep -Ii
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	fu = fetch upstream
 	dw = diff --word-diff
 	dc = diff --cached
 	rename = branch -m
-	discard = checkout --
 	unstage = reset HEAD --
+	discard = checkout --
 	conflicts = diff --name-only --diff-filter=UDX
 	count = !git log --pretty=oneline | wc -l
-	counts = !git shortlog -sn
 	count-branch = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
-[core]
-	autocrlf = input
-	excludesfile = ~/.gitignore
-[user]
-	name = Alberto Grespan
-	email = alberto@albertogrespan.com
-	signingkey = 3021C312
-[push]
-	default = current
+	counts = shortlog -sn
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = true
-[credential]
-	helper = osxkeychain
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+[push]
+	default = current
 [fetch]
 	prune = true
 	[branch]
