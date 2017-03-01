@@ -1,39 +1,35 @@
+# Local/private config goes in the include
+[include]
+	path = ~/.gitconfig.local
 [alias]
+	g = grep -Ii
 	co = checkout
 	cob = checkout -b
-	st = status
-	sts = status -s
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	fu = fetch upstream
-	rename = branch -m
-	conflicts = diff --name-only --diff-filter=UDX
 	dw = diff --word-diff
-	unstage = reset HEAD --
 	dc = diff --cached
-	g = grep -Ii
-	count = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
+	rename = branch -m
+	unstage = reset HEAD --
 	discard = checkout --
-[core]
-	editor = vim
-	autocrlf = input
-	excludesfile = ~/.gitignore
-[user]
-	name = Alberto Grespan
-	email = alberto@albertogrespan.com
-	signingkey = 3021C312
-[push]
-	default = current
+	conflicts = diff --name-only --diff-filter=UDX
+	count = !git log --pretty=oneline | wc -l
+	count-branch = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
+	counts = shortlog -sn
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = true
-[credential]
-	helper = osxkeychain
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+[push]
+	default = current
 [fetch]
 	prune = true
 	[branch]
-	autosetuprebase = always
+		autosetuprebase = always
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
