@@ -1,9 +1,6 @@
-[user]
-	name = Alberto Grespan
-	email = alberto@albertogrespan.com
-	signingkey = 99E748E76A0B181F
-[credential]
-	helper = osxkeychain
+# Local/private config goes in the include
+[include]
+	path = ~/.gitconfig.local
 [alias]
 	g = grep -Ii
 	co = checkout
@@ -37,7 +34,3 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[gpg]
-	program = gpg2
-[commit]
-	gpgsign = true
