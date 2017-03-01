@@ -12,9 +12,7 @@ Dependencies needed for the installation.
 
 Simply clone the repo.
 
-```sh
-git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
-```
+    git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
 
 Running the install script will do the following:
 
@@ -24,9 +22,7 @@ Running the install script will do the following:
 - Create the golang workspace `~/go`
 - Install `vim-plug` and all vim plugins
 
-```sh
-make install
-```
+    make install
 
 > The symlinks are linked by their extension. If the file only contain a `.symlink`
 > extension they are placed in the $HOME dir as a dotfile.
@@ -39,15 +35,21 @@ Once you've ran the `install` it's time to set up Git with your credentials.
     git config --global user.email "you@email.com"
 
 Then if possible [tell git about your GPG key][gpg-key]. Once this is ready you
-are good to go.
+are good to go. If you are not planning on signing your commits you'll need to
+remove the following option from the `.gitconfig`:
+
+    [commit]
+        gpgsign = true
+
+or set it to false doing:
+
+    git config --global commit.gpgsign false
 
 ## macOS
 
 If you want to install my macOS settings just run the following command:
 
-```sh
-make macos
-```
+    make macos
 
 It's based on Mathias Bynens `http://mths.be/osx`.
 
@@ -58,9 +60,7 @@ install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
 
 To achieve this you can use this command:
 
-```sh
-make install-hombrew
-```
+    make install-hombrew
 
 ## License
 
