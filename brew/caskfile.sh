@@ -8,7 +8,7 @@ install_casks() {
     brew cask install --appdir="/Applications" dropbox
     brew cask install --appdir="/Applications" transmission
     brew cask install --appdir="/Applications" gitup
-    brew cask install --appdir="/Applications" gpgtools-beta
+    brew cask install --appdir="/Applications" gpg-suite-beta
 
     # clean
     brew cask cleanup
