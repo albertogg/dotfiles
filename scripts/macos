@@ -81,8 +81,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Require password 5 minutes after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 300
-
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 ###############################################################################
 # Finder                                                                      #
