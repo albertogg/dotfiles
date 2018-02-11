@@ -267,11 +267,27 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
 
+###############################################################################
+# Firewall
+###############################################################################
+
+# Enable per application firewall
+defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dashboard" "Dock" "Finder" "Photos" "Safari" "SystemUIServer" \
-  "Mail" "Terminal"; do
+for app in "Activity Monitor" \
+    "Dashboard" \
+    "Dock" \
+    "Finder" \
+    "Photos" \
+    "Safari" \
+    "SystemUIServer" \
+    "Mail" \
+    "Terminal" \
+    "Transmission"; do
     killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
