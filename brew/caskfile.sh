@@ -9,6 +9,9 @@ install_casks() {
     brew cask install --appdir="/Applications" transmission
     brew cask install --appdir="/Applications" gitup
     brew cask install --appdir="/Applications" gpg-suite-beta
+    brew cask install --appdir="/Applications" tunnelblick
+    brew cask install --appdir="/Applications" nordvpn
+    brew cask install --appdir="/Applications" keybase
 
     # clean
     brew cask cleanup
