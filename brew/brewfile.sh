@@ -7,6 +7,7 @@ install_brews() {
     brew install zsh
     brew install tmux
     brew install tmate
+    brew install tree
     brew install coreutils
     brew install --HEAD universal-ctags
     brew install git
