@@ -13,8 +13,6 @@
 	unstage = reset HEAD --
 	discard = checkout --
 	conflicts = diff --name-only --diff-filter=UDX
-	count = !git log --pretty=oneline | wc -l
-	count-branch = "!f() { git log $1..$2 --pretty=oneline | wc -l; }; f"
 	counts = shortlog -sn
 [color]
 	diff = auto
