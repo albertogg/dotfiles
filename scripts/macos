@@ -83,8 +83,6 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 300
 
-# Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 ###############################################################################
 # Finder                                                                      #
