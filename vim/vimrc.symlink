@@ -46,7 +46,6 @@ set clipboard=unnamed
 " GUI
 "----------------
 if has("gui_running")
-  set guifont=Menlo:h14 " Bigger and different font
   set go-=L             " Remove left scrollbar
   set go-=r             " Remove right scrollbar
 endif
