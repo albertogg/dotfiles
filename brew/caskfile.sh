@@ -12,6 +12,7 @@ install_casks() {
     brew cask install --appdir="/Applications" tunnelblick
     brew cask install --appdir="/Applications" nordvpn
     brew cask install --appdir="/Applications" keybase
+    brew cask install --appdir="/Applications" yubico-yubikey-piv-manager
 
     # clean
     brew cask cleanup

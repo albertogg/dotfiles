@@ -22,6 +22,12 @@ install_brews() {
     brew install go
     brew install jenv
 
+    # yubikey
+    brew install ykclient
+    brew install ykpers
+    brew install yubico-piv-tool
+    brew install pam_yubico
+
     # clean up
     brew cleanup
 }
