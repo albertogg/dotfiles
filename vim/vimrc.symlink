@@ -9,8 +9,8 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
-Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplete'
@@ -158,10 +158,17 @@ let g:ctrlp_show_hidden = 1
 set wildignore+=*/node_modules/*,*/vendor/*
 
 "----------------
-" vim-airline
+" lightline.vim
 "----------------
-let g:airline_left_sep=''  " remove airline separator left, the default is >
-let g:airline_right_sep='' " remove airline separator right, the default is <
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 "----------------
 " neocomplete
