@@ -1,15 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plug 'tomasr/molokai'
-Plug 'bling/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Shougo/neocomplete'
-Plug 'fatih/vim-go'
-Plug 'fatih/vim-hclfmt' " format files
-Plug 'b4b4r07/vim-hcl'  " syntax highlighting
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -17,6 +9,14 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tomasr/molokai'
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Shougo/neocomplete'
+Plug 'fatih/vim-go'
+Plug 'fatih/vim-hclfmt' " format files
+Plug 'b4b4r07/vim-hcl'  " syntax highlighting
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
@@ -141,12 +141,6 @@ nnoremap <leader>g :GitGutterToggle<CR>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-"----------------
-" NERDTree
-"----------------
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
 
 "----------------
 " CtrlP
