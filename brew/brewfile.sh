@@ -1,7 +1,4 @@
 install_brews() {
-    # taps
-    brew tap universal-ctags/universal-ctags
-
     # system formulae
     brew install openssl
     brew install zsh
@@ -9,7 +6,6 @@ install_brews() {
     brew install tmate
     brew install tree
     brew install coreutils
-    brew install --HEAD universal-ctags
     brew install git
     brew install ripgrep
     brew install vim --with-lua --with-override-system-vi
