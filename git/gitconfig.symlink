@@ -1,4 +1,4 @@
-# vim: set ts=4 noexpandtab
+# vim:set ts=4 sts=4 sw=4 noexpandtab:
 # Local/private config goes in the include
 [include]
 	path = ~/.gitconfig.local
