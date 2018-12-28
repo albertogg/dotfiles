@@ -149,6 +149,8 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>. :CtrlP<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
+set wildignore+=*/node_modules/*,*/vendor/*
+
 let g:ctrlp_map = '<leader>b'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ra'
@@ -156,7 +158,11 @@ let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_use_caching = 1
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/node_modules/*,*/vendor/*
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob "!.git/*"'
+  let g:ctrlp_use_caching = 0
+endif
 
 "----------------
 " lightline.vim
