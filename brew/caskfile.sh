@@ -12,4 +12,5 @@ install_casks() {
     brew cask install --appdir="/Applications" nordvpn
     brew cask install --appdir="/Applications" keybase
     brew cask install --appdir="/Applications" yubico-yubikey-piv-manager
+    brew cask install --appdir="/Applications" logitech-options
 }
