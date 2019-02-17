@@ -8,8 +8,8 @@ install_brews() {
     brew install coreutils
     brew install git
     brew install ripgrep
-    brew install vim --with-lua --with-override-system-vi
-    brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
+    brew install vim
+    brew install reattach-to-user-namespace
 
     # development formulae
     brew install rbenv
