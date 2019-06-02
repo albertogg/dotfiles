@@ -11,9 +11,9 @@ bindkey -M menuselect '^o' accept-and-infer-next-history
 zstyle ':completion:*:*:*:*:*' menu select
 
 # load our own completion functions
-fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
-compinit
+compinit -u 
 
 # case insensitive (all), partial-word and substring completion
 if [[ "$CASE_SENSITIVE" = true ]]; then
