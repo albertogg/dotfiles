@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-if command -v mkdir >/dev/null; then
-  echo "Creating golang user workdir..."
-  mkdir -p ~/go
-fi

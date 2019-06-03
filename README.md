@@ -1,63 +1,89 @@
-# albertogg dotfiles
+# Dotfiles
 
 ![v5terminal](https://dl.dropboxusercontent.com/s/zybadcuwcm5lyda/v5terminal.png)
 
-## Installation
+## Dependencies
 
-Dependencies needed for the installation.
+To use the dotfiles you'll need the following dependencies, you can install any
+of these dependencies with [homebrew][brew].
 
-- git
-- make
-- curl
+- [Zsh][zsh]
+- [Git][git]
+- [Stow][stow]
 
-Simply clone the repo.
+You must make Zsh your default shell:
+
+    chsh -s $(which zsh)
+
+If you want you can install all of my default brews, those will include Stow and
+other dependencies.
+
+    ./brew.sh
+
+## Installing
+
+To setup the dotfiles:
 
     git clone https://github.com/albertogg/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles
 
-Running the install script will do the following:
+After that you can link any of the dotfiles by using Stow, for example, Zsh:
 
-- Change the default shell of the current `$USER` to ZSH
-- Install Homebrew if it isn't installed. It asks to install brews and casks
-- Symlink the dotfiles to their proper place
-- Create the golang workspace `~/go`
-- Install `vim-plug` and all vim plugins
+    stow zsh
 
-    make install
+### Current dotfiles
 
-> The symlinks are linked by their extension. If the file only contain a
-> `.symlink` extension they are placed in the $HOME dir as a dotfile.
+- Zsh
+- Vim
+- Tmux
+- Git
+- Ruby
 
-## Setting up Git
+### Setting up Vim
 
-Once the install finishes it's time to set up Git with your credentials. Either
-copy your current user credentials to `~/.gitconfig.local` or set them globally.
+My installation of Vim includes my `.vimrc` and all of the Vim plugins. Install
+the Vim dotfiles:
+
+    stow vim
+
+Install [vim-plug][vim-plug] and all of the dependencies:
+
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +PlugInstall +qall
+
+### Setting up Git
+
+Link the dotfiles:
+
+    stow git
+
+Then setup your Git. Copy your current user credentials to `~/.gitconfig.local`
+or set them globally.
 
     git config --global user.name "Your Name"
     git config --global user.email "you@email.com"
-
-Then if possible [tell git about your GPG key][gpg-key]. Once this is ready you
-are good to go.
 
 ## macOS
 
 If you want to install my macOS settings just run the following command:
 
-    make macos
+    ./macos.sh
 
 Those settings are based on Mathias Bynens `http://mths.be/osx`.
 
-## Hombrew
+## Terminal
 
-You can run an individual task to check if Homebrew is installed and also to
-install my default Homebrew Apps (git, coreutils, tree, rbenv, tmux, etc...)
-
-To achieve this you can use this command:
-
-    make install-hombrew
+In the `terminal` dir you can find my macOS Terminal profile. To install it just
+add it from the Terminal.
 
 ## License
 
-[MIT License][mit] as usual!
+[MIT License][mit]
 
 [mit]: https://github.com/albertogg/dotfiles/blob/master/LICENSE
-[gpg-key]: https://help.github.com/articles/telling-git-about-your-gpg-key/
+[vim-plug]: https://github.com/junegunn/vim-plug
+[zsh]: http://www.zsh.org
+[git]: https://git-scm.com
+[stow]: https://www.gnu.org/software/stow/
+[brew]: https://brew.sh
