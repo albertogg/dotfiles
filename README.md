@@ -31,6 +31,14 @@ After that you can link any of the dotfiles by using Stow, for example, Zsh:
 
     stow zsh
 
+### Current dotfiles
+
+- Zsh
+- Vim
+- Tmux
+- Git
+- Ruby
+
 ### Setting up Vim
 
 My installation of Vim includes my `.vimrc` and all of the Vim plugins. Install
@@ -63,6 +71,11 @@ If you want to install my macOS settings just run the following command:
     ./macos.sh
 
 Those settings are based on Mathias Bynens `http://mths.be/osx`.
+
+## Terminal
+
+In the `terminal` dir you can find my macOS Terminal profile. To install it just
+add it from the Terminal.
 
 ## License
 
