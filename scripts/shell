@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -e `which chsh` ]; then
-  sudo /usr/bin/chsh -s $(which zsh) $USER
-  exit 0
-fi
