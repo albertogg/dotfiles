@@ -28,6 +28,7 @@ brew install pam_yubico
 # Taps
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew tap homebrew/cask-drivers # required for logitech-options
 
 # Applications
 brew cask install appcleaner
