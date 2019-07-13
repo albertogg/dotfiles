@@ -1,6 +1,7 @@
 # System formulae
 brew install stow
 brew install openssl
+brew install gpg
 brew install zsh
 brew install tmux
 brew install tmate
@@ -20,6 +21,7 @@ brew install go
 brew install jenv
 
 # Yubikey
+brew install ykman
 brew install ykclient
 brew install ykpers
 brew install yubico-piv-tool
