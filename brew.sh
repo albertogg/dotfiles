@@ -12,6 +12,7 @@ brew install vim
 brew install reattach-to-user-namespace
 
 # Development formulae
+brew install direnv
 brew install rbenv
 brew install rbenv-vars
 brew install rbenv-default-gems
