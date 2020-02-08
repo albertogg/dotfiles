@@ -1,6 +1,7 @@
 # System formulae
 brew install stow
 brew install openssl
+brew install gpg
 brew install zsh
 brew install tmux
 brew install tmate
@@ -12,6 +13,7 @@ brew install vim
 brew install reattach-to-user-namespace
 
 # Development formulae
+brew install direnv
 brew install rbenv
 brew install rbenv-vars
 brew install rbenv-default-gems
@@ -20,6 +22,7 @@ brew install go
 brew install jenv
 
 # Yubikey
+brew install ykman
 brew install ykclient
 brew install ykpers
 brew install yubico-piv-tool
@@ -28,6 +31,7 @@ brew install pam_yubico
 # Taps
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew tap homebrew/cask-drivers # required for logitech-options
 
 # Applications
 brew cask install appcleaner

@@ -38,6 +38,8 @@ After that you can link any of the dotfiles by using Stow, for example, Zsh:
 - Tmux
 - Git
 - Ruby
+- GnuPG
+- Direnv
 
 ### Setting up Vim
 
