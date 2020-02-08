@@ -43,6 +43,27 @@ set autowrite                  " Automatically :write before running commands
 set clipboard=unnamed
 
 "----------------
+" Text Formating
+"----------------
+syntax on
+set autoindent
+set tabstop=2        " Number of visual spaces per TAB
+set softtabstop=2    " Number of spaces in tab when editing
+set shiftwidth=2     " Number of spaces per indentation movement
+set expandtab        " Use an amount of spaces to expand a tab
+set nosmarttab
+set wrap
+set linebreak
+set textwidth=0      " Ensure that long lines will not be broken when pasting
+set complete+=kspell " Autocomplete with dictionary words when spell check is on
+
+"----------------
+" Autocomplete
+"----------------
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+"----------------
 " GUI
 "----------------
 if has("gui_running")
@@ -75,27 +96,6 @@ set splitbelow                     " Open new split panes at the bottom
 set splitright                     " Open new split panes to right
 set wildmenu                       " Visual autocomplete for command menu
 set lazyredraw                     " Redraw only when we need to.
-
-"----------------
-" Text Formating
-"----------------
-syntax on
-set autoindent
-set tabstop=2        " Number of visual spaces per TAB
-set softtabstop=2    " Number of spaces in tab when editing
-set shiftwidth=2     " Number of spaces per indentation movement
-set expandtab        " Use an amount of spaces to expand a tab
-set nosmarttab
-set wrap
-set linebreak
-set textwidth=0      " Ensure that long lines will not be broken when pasting
-set complete+=kspell " Autocomplete with dictionary words when spell check is on
-
-"----------------
-" Autocomplete
-"----------------
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
 "----------------
 " Mappings
