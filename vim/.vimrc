@@ -11,7 +11,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplete'
@@ -55,7 +55,7 @@ endif
 "----------------
 " paint colorcolumn with a custom color
 highlight ColorColumn guibg=#32322f ctermbg=236
-silent! colorscheme molokai        " Use molokai colorscheme
+silent! colorscheme onedark        " Use molokai colorscheme
 set colorcolumn=80,100             " Delimiter line at 80 and 100 characters
 set laststatus=2                   " Always show the status line!
 set ruler                          " Show the cursor position all the time
@@ -167,6 +167,7 @@ endif
 " lightline.vim
 "----------------
 let g:lightline = {
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
