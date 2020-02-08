@@ -213,7 +213,8 @@ augroup vimrcEx
   autocmd FileType java,xml,make setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
   autocmd FileType go setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
   " vim-go plugin
-  autocmd FileType go let g:go_fmt_command = "goimports"
+  autocmd FileType go let g:go_fmt_command = 'goimports'
+  autocmd FileType go let g:go_rename_command = 'gopls'
   autocmd FileType go let g:go_highlight_functions = 1
   autocmd FileType go let g:go_highlight_methods = 1
   autocmd FileType go let g:go_highlight_fields = 1
