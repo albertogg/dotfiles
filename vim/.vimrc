@@ -210,7 +210,8 @@ augroup vimrcEx
   " set spell in gitcommits
   autocmd FileType gitcommit setlocal spell
   " Go, Java, XML and Make files configuration
-  autocmd FileType go,java,xml,make setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
+  autocmd FileType java,xml,make setl expandtab softtabstop=4 tabstop=4 shiftwidth=4
+  autocmd FileType go setl noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
   " vim-go plugin
   autocmd FileType go let g:go_fmt_command = "goimports"
   autocmd FileType go let g:go_highlight_functions = 1
