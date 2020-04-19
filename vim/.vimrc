@@ -20,6 +20,8 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -90,7 +92,7 @@ set ignorecase                     " Search case insensitive
 set incsearch                      " Show matches while typing
 set hlsearch                       " Highlight search results
 set showmatch                      " Show matching brackets flickering
-set completeopt-=preview           " Don't pop-up completions code previews
+set completeopt=longest,menuone    " Don't select the first item but the longest
 set splitbelow                     " Open new split panes at the bottom
 set splitright                     " Open new split panes to right
 set wildmenu                       " Visual autocomplete for command menu
@@ -177,7 +179,9 @@ let g:lightline = {
       \ }
 
 "----------------
+" vim-racer
 "----------------
+let g:racer_experimental_completer = 1
 
 "----------------
 " vim-test
@@ -226,6 +230,12 @@ augroup vimrcEx
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  " Rust with Racer
+  autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+  autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+  autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+  autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+  autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
 augroup END
 
 "----------------
