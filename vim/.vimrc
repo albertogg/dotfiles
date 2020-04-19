@@ -20,6 +20,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'rust-lang/rust.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
