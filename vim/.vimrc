@@ -21,6 +21,7 @@ Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -178,7 +179,9 @@ let g:lightline = {
       \ }
 
 "----------------
+" vim-racer
 "----------------
+let g:racer_experimental_completer = 1
 
 "----------------
 " vim-test
@@ -227,6 +230,12 @@ augroup vimrcEx
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  " Rust with Racer
+  autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+  autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+  autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+  autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+  autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
 augroup END
 
 "----------------
