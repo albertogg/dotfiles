@@ -92,7 +92,7 @@ set ignorecase                     " Search case insensitive
 set incsearch                      " Show matches while typing
 set hlsearch                       " Highlight search results
 set showmatch                      " Show matching brackets flickering
-set completeopt-=preview           " Don't pop-up completions code previews
+set completeopt=longest,menuone    " Don't select the first item but the longest
 set splitbelow                     " Open new split panes at the bottom
 set splitright                     " Open new split panes to right
 set wildmenu                       " Visual autocomplete for command menu
