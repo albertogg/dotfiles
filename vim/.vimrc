@@ -14,7 +14,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Shougo/neocomplete'
 Plug 'fatih/vim-go'
 Plug 'b4b4r07/vim-hcl'  " syntax highlighting
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -178,14 +177,7 @@ let g:lightline = {
       \ }
 
 "----------------
-" neocomplete
 "----------------
-" Use neocomplete
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length
-let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 "----------------
 " vim-test
