@@ -270,13 +270,14 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader>b :call fzf#run(fzf#wrap({
+command! FZFBuffer call fzf#run(fzf#wrap({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
-\ }))<CR>
+\ }))
 
+nnoremap <silent> <Leader>b :FZFBuffer<CR>
 "----------------
 " functions
 "----------------
