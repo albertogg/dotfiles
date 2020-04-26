@@ -112,6 +112,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Some useful quickfix shortcuts for quickfix
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
+nnoremap <leader>a :cclose<CR>
+
 " Call StripTrailingWhitespaces
 nnoremap <leader><space> :call StripTrailingWhitespaces()<CR>
 
