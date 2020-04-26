@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar' " Better project drawer
+Plug 'tpope/vim-fugitive' " Plugin for Git
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-markdown'
@@ -14,7 +14,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
-Plug 'b4b4r07/vim-hcl'  " syntax highlighting
+Plug 'b4b4r07/vim-hcl' " syntax highlighting
 Plug 'vim-ruby/vim-ruby'
 Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
