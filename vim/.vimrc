@@ -8,14 +8,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+Plug 'tpope/vim-rbenv'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'b4b4r07/vim-hcl'  " syntax highlighting
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
