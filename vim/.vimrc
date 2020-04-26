@@ -12,6 +12,7 @@ Plug 'tpope/vim-rbenv'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf'
 Plug 'fatih/vim-go'
 Plug 'b4b4r07/vim-hcl' " syntax highlighting
 Plug 'vim-ruby/vim-ruby'
@@ -251,6 +252,30 @@ let g:racer_experimental_completer = 1
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
+
+"----------------
+" FZF
+"----------------
+nnoremap <leader>. :FZF<CR>
+let g:fzf_layout = { 'down': '~20%' }
+
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader>b :call fzf#run(fzf#wrap({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ }))<CR>
 
 "----------------
 " functions
