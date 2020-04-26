@@ -9,7 +9,6 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
@@ -131,9 +130,7 @@ imap ,. <C-X><C-O>
 nnoremap <silent> <leader>V :so ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 "----------------
-" rails.vim
 "----------------
-inoremap <C-Space> <C-x><C-u>
 
 "----------------
 " GitGutter
