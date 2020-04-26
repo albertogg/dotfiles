@@ -12,7 +12,6 @@ Plug 'tpope/vim-rbenv'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'b4b4r07/vim-hcl' " syntax highlighting
 Plug 'vim-ruby/vim-ruby'
@@ -171,26 +170,6 @@ nnoremap <leader>g :GitGutterToggle<CR>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-"----------------
-" CtrlP
-"----------------
-nnoremap <leader>. :CtrlP<CR>
-
-set wildignore+=*/node_modules/*,*/vendor/*
-
-let g:ctrlp_map = '<leader>b'
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_use_caching = 1
-let g:ctrlp_show_hidden = 1
-
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob "!.git/*"'
-  let g:ctrlp_use_caching = 0
-endif
 
 "----------------
 " lightline.vim
