@@ -176,7 +176,6 @@ nmap ga <Plug>(EasyAlign)
 " CtrlP
 "----------------
 nnoremap <leader>. :CtrlP<CR>
-nnoremap <leader>t :CtrlPTag<CR>
 
 set wildignore+=*/node_modules/*,*/vendor/*
 
