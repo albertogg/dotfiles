@@ -8,6 +8,7 @@ brew install tmate
 brew install tree
 brew install coreutils
 brew install git
+brew install fzf
 brew install ripgrep
 brew install vim
 brew install reattach-to-user-namespace
@@ -20,6 +21,7 @@ brew install rbenv-default-gems
 brew install ruby-build
 brew install go
 brew install jenv
+brew install rustup-init
 
 # Yubikey
 brew install ykman
