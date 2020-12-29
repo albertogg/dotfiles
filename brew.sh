@@ -31,8 +31,7 @@ brew install yubico-piv-tool
 brew install pam_yubico
 
 # Taps
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers # required for logitech-options
 
 # Applications
