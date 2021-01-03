@@ -14,7 +14,7 @@
 	unstage = reset HEAD --
 	discard = checkout --
 	conflicts = diff --name-only --diff-filter=UDX
-	counts = shortlog -sn
+	count = git rev-list --count
 [color]
 	diff = auto
 	status = auto
