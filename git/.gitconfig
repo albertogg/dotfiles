@@ -23,8 +23,6 @@
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
-[push]
-	default = current
 [fetch]
 	prune = true
 	[branch]
