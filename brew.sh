@@ -31,17 +31,16 @@ brew install yubico-piv-tool
 brew install pam_yubico
 
 # Taps
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers # required for logitech-options
 
 # Applications
-brew cask install appcleaner
-brew cask install dropbox
-brew cask install transmission
-brew cask install gitup
-brew cask install tunnelblick
-brew cask install nordvpn
-brew cask install keybase
-brew cask install yubico-yubikey-piv-manager
-brew cask install logitech-options
+brew install appcleaner
+brew install dropbox
+brew install transmission
+brew install gitup
+brew install tunnelblick
+brew install nordvpn
+brew install keybase
+brew install yubico-yubikey-piv-manager
+brew install logitech-options
