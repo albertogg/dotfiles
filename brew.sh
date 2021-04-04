@@ -40,7 +40,9 @@ brew install dropbox
 brew install transmission
 brew install gitup
 brew install tunnelblick
-brew install nordvpn
 brew install keybase
 brew install yubico-yubikey-piv-manager
 brew install logitech-options
+
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+chmod -R go-w "$(brew --prefix)/share"
