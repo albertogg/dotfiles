@@ -10,7 +10,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim' " Colorscheme
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf'
 Plug 'fatih/vim-go'
