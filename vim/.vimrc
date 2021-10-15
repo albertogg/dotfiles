@@ -85,7 +85,7 @@ set numberwidth=5                  " Numbers 5 character width
 set showcmd                        " Show command in bottom bar
 set list                           " Show list of characters
 set listchars=tab:»·,eol:¬,trail:· " Invisible characters notations
-set diffopt+=vertical              " Always use vertical diffs
+set diffopt=vertical               " Always use vertical diffs
 set history=50                     " Lines of history
 set ignorecase                     " Search case insensitive
 set incsearch                      " Show matches while typing
