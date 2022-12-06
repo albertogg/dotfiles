@@ -38,7 +38,7 @@ brew tap homebrew/cask-drivers # required for logitech-options
 brew install appcleaner
 brew install dropbox
 brew install transmission
-brew install gitup
+brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install yubico-yubikey-piv-manager
