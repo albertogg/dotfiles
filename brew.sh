@@ -42,7 +42,7 @@ brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install yubico-yubikey-piv-manager
-brew install logitech-options
+brew install logi-options-plus
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 chmod -R go-w "$(brew --prefix)/share"
