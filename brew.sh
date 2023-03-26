@@ -39,7 +39,7 @@ brew install transmission
 brew install gitup --cask
 brew install tunnelblick
 brew install keybase
-brew install logitech-options
+brew install logi-options-plus
 brew install yubico-yubikey-manager # Yubikey Manager UI
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
