@@ -24,6 +24,9 @@ brew install rustup-init
 
 # Yubikey
 brew install ykman
+brew install yubikey-personalization
+brew install yubikey-agent
+brew services start yubikey-agent # Start the service
 
 # Taps
 brew tap homebrew/cask-versions
@@ -37,6 +40,7 @@ brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install logitech-options
+brew install yubico-yubikey-manager # Yubikey Manager UI
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 chmod -R go-w "$(brew --prefix)/share"
