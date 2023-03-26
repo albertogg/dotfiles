@@ -1,7 +1,6 @@
 # System formulae
 brew install stow
 brew install openssl
-brew install gpg
 brew install zsh
 brew install tmux
 brew install tmate
@@ -25,10 +24,6 @@ brew install rustup-init
 
 # Yubikey
 brew install ykman
-brew install ykclient
-brew install ykpers
-brew install yubico-piv-tool
-brew install pam_yubico
 
 # Taps
 brew tap homebrew/cask-versions
@@ -41,7 +36,6 @@ brew install transmission
 brew install gitup --cask
 brew install tunnelblick
 brew install keybase
-brew install yubico-yubikey-piv-manager
 brew install logitech-options
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
