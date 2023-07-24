@@ -30,7 +30,6 @@ brew services start yubikey-agent # Start the service
 
 # Taps
 brew tap homebrew/cask-versions
-brew tap homebrew/cask-drivers # required for logitech-options
 
 # Applications
 brew install appcleaner
@@ -40,7 +39,6 @@ brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install logi-options-plus
-brew install yubico-yubikey-manager # Yubikey Manager UI
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 chmod -R go-w "$(brew --prefix)/share"
