@@ -1,0 +1,9 @@
+brew install awscli
+brew install colima
+brew install docker
+brew install docker-compose
+brew install helm
+brew install kubectx
+brew install kubernetes-cli
+brew install tfenv
+brew install terragrunt

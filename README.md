@@ -60,11 +60,11 @@ Link the dotfiles:
 
     stow git
 
-Then setup your Git. Copy your current user credentials to `~/.gitconfig.local`
-or set them globally.
+Then setup your Git. Set the user credentials to `~/.gitconfig.local` or set
+them globally.
 
-    git config --global user.name "Your Name"
-    git config --global user.email "you@email.com"
+    git config --file ~/.gitconfig.local user.name "Your Name"
+    git config --file ~/.gitconfig.local user.email "you@email.com"
 
 ## macOS
 
