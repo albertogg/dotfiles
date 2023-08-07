@@ -39,6 +39,7 @@ brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install logi-options-plus
+brew install spotify
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 chmod -R go-w "$(brew --prefix)/share"
