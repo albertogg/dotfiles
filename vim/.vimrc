@@ -216,6 +216,7 @@ augroup go
   autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
   autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
   autocmd FileType go nmap <silent> <Leader>gv <Plug>(go-doc-vertical)
+  autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-doc)
   autocmd FileType go nmap <silent> <Leader>gb <Plug>(go-build)
   autocmd FileType go nmap <silent> <Leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <Leader>t <Plug>(go-test)
@@ -234,11 +235,11 @@ let g:rustfmt_autosave = 1
 augroup rust
   autocmd!
 
-  autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
-  autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
-  autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
-  autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
-  autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+  autocmd FileType rust nmap <buffer> s          <Plug>(ale_go_to_definition_in_split)
+  autocmd FileType rust nmap <buffer> v          <Plug>(ale_go_to_definition_in_vsplit)
+  autocmd FileType rust nmap <buffer> <leader>gd <Plug>(ale_hover)
+  autocmd FileType rust nmap <buffer> <leader>e  <Plug>(ale_rename)
+  autocmd FileType rust nmap <buffer> <Leader>r  :Cargo run<CR>
 augroup END
 
 "----------------
