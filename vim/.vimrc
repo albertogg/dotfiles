@@ -20,7 +20,7 @@ Plug 'janko-m/vim-test',
 Plug 'junegunn/vim-easy-align'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'dense-analysis/ale'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -61,7 +61,7 @@ set complete+=kspell " Autocomplete with dictionary words when spell check is on
 " Autocomplete
 "----------------
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=ale#completion#OmniFunc
 
 "----------------
 " GUI
@@ -242,9 +242,9 @@ augroup rust
 augroup END
 
 "----------------
-" vim-racer
+" ALE
 "----------------
-let g:racer_experimental_completer = 1
+let g:ale_linters = { 'rust': ['analyzer'] }
 
 "----------------
 " vim-ruby
