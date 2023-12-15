@@ -220,9 +220,9 @@ augroup go
   autocmd FileType go nmap <silent> <Leader>gb <Plug>(go-build)
   autocmd FileType go nmap <silent> <Leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <Leader>t <Plug>(go-test)
-  autocmd FileType go nmap <silent> <leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
   autocmd FileType go nmap <silent> <Leader>e <Plug>(go-rename)
-  autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
+  autocmd FileType go nmap <silent> <Leader>i <Plug>(go-install)
   autocmd FileType go nmap <silent> <Leader>s <Plug>(go-implements)
   autocmd FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
 augroup END
@@ -235,10 +235,10 @@ let g:rustfmt_autosave = 1
 augroup rust
   autocmd!
 
-  autocmd FileType rust nmap <buffer> s          <Plug>(ale_go_to_definition_in_split)
-  autocmd FileType rust nmap <buffer> v          <Plug>(ale_go_to_definition_in_vsplit)
-  autocmd FileType rust nmap <buffer> <leader>gd <Plug>(ale_hover)
-  autocmd FileType rust nmap <buffer> <leader>e  <Plug>(ale_rename)
+  autocmd FileType rust nmap <buffer> <Leader>s  <Plug>(ale_go_to_definition_in_split)
+  autocmd FileType rust nmap <buffer> <Leader>v  <Plug>(ale_go_to_definition_in_vsplit)
+  autocmd FileType rust nmap <buffer> <Leader>gd <Plug>(ale_hover)
+  autocmd FileType rust nmap <buffer> <Leader>e  <Plug>(ale_rename)
   autocmd FileType rust nmap <buffer> <Leader>r  :Cargo run<CR>
 augroup END
 
