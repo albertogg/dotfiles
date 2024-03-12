@@ -54,6 +54,14 @@ Install [vim-plug][vim-plug] and all of the dependencies:
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +PlugInstall +qall
 
+### Setting up Neovim
+
+Installing Neovim is more or less the same that with other dotfiles.
+
+    stow config -t ~/.config/
+
+**Note:** plugin manager and plugins will be installed when nvim is opened.
+
 ### Setting up Git
 
 Link the dotfiles:
