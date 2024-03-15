@@ -19,8 +19,8 @@ vim.opt.rtp:prepend(lazypath)
 --------------------
 require("lazy").setup({
   -- colorscheme
-  { 
-    "folke/tokyonight.nvim", 
+  {
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function ()
@@ -29,16 +29,16 @@ require("lazy").setup({
   },
 
   -- statusline
-  { 
+  {
     "nvim-lualine/lualine.nvim",
     config = function ()
       require("lualine").setup({
         options = {
           icons_enabled = false,
-    theme = "auto",
-    component_separators = "",
-      section_separators = "",
-    },
+          theme = "auto",
+          component_separators = "",
+          section_separators = "",
+        },
         sections = {
           lualine_c = {
             {
@@ -59,20 +59,20 @@ require("lazy").setup({
 
   -- telescope (fuzzy finder)
   {
-    "nvim-telescope/telescope.nvim", 
+    "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
-    dependencies = { 
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
     config = function ()
       require("telescope").setup({
-  pickers = {
-    find_files = {
-      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-    },
-  },
+        pickers = {
+          find_files = {
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          },
+        },
       })
     end,
   },
@@ -127,7 +127,7 @@ require("lazy").setup({
 
   -- lsp config
   {
-    "neovim/nvim-lspconfig", 
+    "neovim/nvim-lspconfig",
     config = function ()
       local lspconfig = require("lspconfig")
 
