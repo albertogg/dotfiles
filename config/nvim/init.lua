@@ -121,6 +121,10 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "hashivim/vim-terraform"
+  },
+
   -- lsp config
   {
     "neovim/nvim-lspconfig", 
