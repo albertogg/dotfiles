@@ -52,9 +52,15 @@ require("lazy").setup({
     end,
   },
 
-  -- fugitive (git)
+  -- git management
   {
-    "tpope/vim-fugitive",
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true
   },
 
   -- telescope (fuzzy finder)
