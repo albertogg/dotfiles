@@ -353,6 +353,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- vim-test
+vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true })
+
 -- automatically resize all vim buffers if I resize the terminal window
 vim.api.nvim_command("autocmd VimResized * wincmd =")
 
