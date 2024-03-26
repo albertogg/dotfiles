@@ -122,7 +122,7 @@ require("lazy").setup({
   {
     "numToStr/Comment.nvim",
     config = function()
-      require("Comment").setup() 
+      require("Comment").setup()
     end,
   },
 
@@ -163,7 +163,7 @@ require("lazy").setup({
   },
 
   {
-    "hashivim/vim-terraform"
+    "hashivim/vim-terraform",
   },
 
   -- lsp config
