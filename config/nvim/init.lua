@@ -242,8 +242,8 @@ vim.opt.mouse = "a"                -- Enable mouse support
 vim.opt.clipboard = "unnamedplus"  -- Copy/paste to system clipboard
 vim.opt.swapfile = false           -- Don't use swapfile
 vim.opt.ignorecase = true          -- Search case insensitive...
-vim.opt.smartcase = true           -- ... but not it begins with upper case 
-vim.opt.list = true -- Invisible characters notations
+vim.opt.smartcase = true           -- ... but not it begins with upper case
+vim.opt.list = true                -- Invisible characters notations
 vim.opt.splitbelow = true          -- open split pane below
 vim.opt.splitright = true          -- open split pane to the right
 
@@ -284,11 +284,11 @@ vim.keymap.set("i", "jk", "<ESC>")
 -- complete
 vim.keymap.set("i", "<leader>.", "<C-X><C-O>", { noremap = false, silent = false })
 
--- Some useful quickfix shortcuts for quickfix
+-- some useful quickfix shortcuts for quickfix
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
 
--- Remove search highlight
+-- remove search highlight
 vim.keymap.set("n", "<leader>*", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 -- default augroup
