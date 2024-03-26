@@ -291,6 +291,12 @@ vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
 -- Remove search highlight
 vim.keymap.set("n", "<leader>*", ":nohlsearch<CR>", { noremap = true, silent = true })
 
+-- default augroup
+local augroup = vim.api.nvim_create_augroup
+local DefaultGroup = augroup("DefaultGroup", {})
+
+local autocmd = vim.api.nvim_create_autocmd
+
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>.", builtin.find_files, {})
@@ -302,14 +308,14 @@ vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silen
 vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true })
 
 -- file format based on file type
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = vim.api.nvim_create_augroup("ftdetect", { clear = true }),
   pattern = { "*.go", "*.make", "*.xml" },
   command = "setlocal noexpandtab softtabstop=4 shiftwidth=4 tabstop=4",
 })
 
--- Run gofmt/gofmpt, import packages automatically on save
-vim.api.nvim_create_autocmd("BufWritePre", {
+-- run gofmt/gofmpt, import packages automatically on save
+autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("setGoFormatting", { clear = true }),
   pattern = "*.go",
   callback = function()
