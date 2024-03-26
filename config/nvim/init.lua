@@ -297,6 +297,13 @@ local DefaultGroup = augroup("DefaultGroup", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
+-- clear trailing spaces
+autocmd("BufWritePre", {
+  group = DefaultGroup,
+  pattern = "*",
+  command = [[%s/\s\+$//e]],
+})
+
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>.", builtin.find_files, {})
