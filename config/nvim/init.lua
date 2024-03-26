@@ -72,6 +72,11 @@ require("lazy").setup({
     end,
   },
 
+  -- file explorer
+  {
+    "tpope/vim-vinegar",
+  },
+
   -- unix shell commands
   {
     "tpope/vim-eunuch",
