@@ -72,6 +72,11 @@ require("lazy").setup({
     end,
   },
 
+  -- unix shell commands
+  {
+    "tpope/vim-eunuch",
+  },
+
   -- git management
   {
     "NeogitOrg/neogit",
