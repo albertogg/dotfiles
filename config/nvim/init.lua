@@ -105,8 +105,8 @@ require("lazy").setup({
           -- Actions
           vim.keymap.set("n", "<leader>gb", function() gs.blame_line{full=true} end, opts)
           vim.keymap.set("n", "<leader>gtb", gs.toggle_current_line_blame, opts)
-          vim.keymap.set("n", "<leader>gd", gs.diffthis, opts)
-          vim.keymap.set("n", "<leader>gD", function() gs.diffthis("~") end, opts)
+          vim.keymap.set("n", "<leader>gdt", gs.diffthis, opts)
+          vim.keymap.set("n", "<leader>gdd", function() gs.diffthis("~") end, opts)
           vim.keymap.set("n", "<leader>gtd", gs.toggle_deleted, opts)
           vim.keymap.set("v", "<leader>gs", function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, opts)
           vim.keymap.set("v", "<leader>gr", function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, opts)
