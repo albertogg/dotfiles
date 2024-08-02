@@ -163,8 +163,34 @@ require("lazy").setup({
   -- lsp config
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
+    },
     config = function ()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+      -- Ensure that we have required lsp's ready.
+      require("mason").setup()
+
+      local mason_lspconfig = require("mason-lspconfig")
+      mason_lspconfig.setup {
+        ensure_installed = {
+          "pyright",
+          "rust_analyzer",
+        },
+      }
+
       local lspconfig = require("lspconfig")
+
+      lspconfig.pyright.setup {
+        capabilities = capabilities,
+      }
 
       lspconfig.rust_analyzer.setup {
         -- Server-specific settings. See `:help lspconfig-setup`
