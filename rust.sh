@@ -10,5 +10,5 @@ else
   exit 1
 fi
 
-# Install rust-analyzer for completions, docs, and clippy.
-rustup component add rust-analyzer rustfmt rust-docs clippy
+# Install docs, and clippy.
+rustup component add rustfmt rust-docs clippy
