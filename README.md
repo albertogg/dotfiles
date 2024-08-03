@@ -34,25 +34,12 @@ After that you can link any of the dotfiles by using Stow, for example, Zsh:
 ### Current dotfiles
 
 - Zsh
-- Vim
+- Neovim
 - Tmux
 - Git
 - Ruby
 - GnuPG
 - Direnv
-
-### Setting up Vim
-
-My installation of Vim includes my `.vimrc` and all of the Vim plugins. Install
-the Vim dotfiles:
-
-    stow vim
-
-Install [vim-plug][vim-plug] and all of the dependencies:
-
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    vim +PlugInstall +qall
 
 ### Setting up Neovim
 
@@ -92,7 +79,6 @@ add it from the Terminal.
 [MIT License][mit]
 
 [mit]: https://github.com/albertogg/dotfiles/blob/master/LICENSE
-[vim-plug]: https://github.com/junegunn/vim-plug
 [zsh]: http://www.zsh.org
 [git]: https://git-scm.com
 [stow]: https://www.gnu.org/software/stow/

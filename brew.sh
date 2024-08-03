@@ -9,7 +9,6 @@ brew install coreutils
 brew install git
 brew install fzf
 brew install ripgrep
-brew install vim
 brew install neovim
 brew install reattach-to-user-namespace
 
