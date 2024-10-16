@@ -207,8 +207,9 @@ require("lazy").setup({
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup {
         ensure_installed = {
-          "pyright",
           "rust_analyzer",
+          "pyright",
+          "ts_ls",
         },
       }
 
@@ -237,10 +238,7 @@ require("lazy").setup({
 
       local lspconfig = require("lspconfig")
 
-      lspconfig.pyright.setup {
-        capabilities = capabilities,
-      }
-
+      -- Rust
       lspconfig.rust_analyzer.setup {
         -- Server-specific settings. See `:help lspconfig-setup`
         settings = {
@@ -248,6 +246,7 @@ require("lazy").setup({
         },
       }
 
+      -- Go
       lspconfig.gopls.setup {
         flags = { debounce_text_changes = 200 },
         settings = {
@@ -287,6 +286,14 @@ require("lazy").setup({
           },
         },
       }
+
+      -- Python
+      lspconfig.pyright.setup {
+        capabilities = capabilities,
+      }
+
+      -- JavaScript TypeScript.
+      lspconfig.ts_ls.setup {}
     end,
   },
 })
