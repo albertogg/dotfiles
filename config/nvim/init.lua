@@ -146,6 +146,15 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "sindrets/diffview.nvim",
+    config = function()
+      require("diffview").setup({
+        use_icons = false,
+      })
+    end,
+  },
+
   -- commenting out lines
   {
     "numToStr/Comment.nvim",
