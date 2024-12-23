@@ -235,6 +235,7 @@ require("lazy").setup({
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup {
         ensure_installed = {
+          "lua_ls",
           "rust_analyzer",
           "pyright",
           "ts_ls",
@@ -265,6 +266,9 @@ require("lazy").setup({
       })
 
       local lspconfig = require("lspconfig")
+
+      -- Lua
+      lspconfig.lua_ls.setup {}
 
       -- Rust
       lspconfig.rust_analyzer.setup {
