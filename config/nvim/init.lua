@@ -128,19 +128,17 @@ require("lazy").setup({
         on_attach = function(bufnr)
           local gs = package.loaded.gitsigns
 
-          local opts = { buffer = bufnr }
-
           -- Actions
-          vim.keymap.set("n", "<leader>gb", function() gs.blame_line{full=true} end, opts)
-          vim.keymap.set("n", "<leader>gtb", gs.toggle_current_line_blame, opts)
-          vim.keymap.set("n", "<leader>gdt", gs.diffthis, opts)
-          vim.keymap.set("n", "<leader>gdd", function() gs.diffthis("~") end, opts)
-          vim.keymap.set("n", "<leader>gtd", gs.toggle_deleted, opts)
-          vim.keymap.set("v", "<leader>gs", function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, opts)
-          vim.keymap.set("v", "<leader>gr", function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, opts)
+          vim.keymap.set("n", "<leader>gb", function() gs.blame_line{full=true} end, { buffer = bufnr, desc = "Git [B]lame" })
+          vim.keymap.set("n", "<leader>gtb", gs.toggle_current_line_blame, { buffer = bufnr, desc = "Git [T]oggle Blame" })
+          vim.keymap.set("n", "<leader>gdt", gs.diffthis, { buffer = bufnr, desc = "Git [D]iff This" })
+          vim.keymap.set("n", "<leader>gdd", function() gs.diffthis("~") end, { buffer = bufnr, desc = "Git [D]iff" })
+          vim.keymap.set("n", "<leader>gtd", gs.toggle_deleted, { buffer = bufnr, desc = "Git [T]oggle Deleted" })
+          vim.keymap.set("v", "<leader>gs", function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, { buffer = bufnr, desc = "Git [S]tage" })
+          vim.keymap.set("v", "<leader>gr", function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, { buffer = bufnr, desc = "Git [R]eset" })
 
           -- Text object
-          vim.keymap.set({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>", opts)
+          vim.keymap.set({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>", { buffer = bufnr, desc = "Select [H]unk" })
         end
       }
     end,
@@ -462,13 +460,13 @@ autocmd("BufWritePre", {
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>.", builtin.find_files, { desc = "Telescope - Find Files " })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope - Live Grep Find" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope - Find in Buffers" })
+vim.keymap.set("n", "<leader>.", builtin.find_files, { desc = "Telescope - [.] Find Files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope - [G]rep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope - [B]uffers" })
 
 -- vim-test
-vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true, desc = "Test - Test Nearest" })
-vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true, desc = "Test - Test File" })
+vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true, desc = "Test [T]est Nearest" })
+vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true, desc = "Test [T]est File" })
 
 -- file format based on file type
 autocmd("FileType", {
@@ -506,19 +504,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
+    vim.keymap.set("n", "<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", { buffer = ev.buf, desc = "Go to [V]ertical split definition" })
+    vim.keymap.set("n", "<leader>s", "<cmd>belowright split | lua vim.lsp.buf.definition()<CR>", { buffer = ev.buf, desc = "Go to [S]plit definition" })
+    vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { buffer = ev.buf, desc = "Run [C]ode lens" })
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = ev.buf, desc = "[R]ename" })
+    vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code [A]ction" })
 
-    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    vim.keymap.set("n", "<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
-    vim.keymap.set("n", "<leader>s", "<cmd>belowright split | lua vim.lsp.buf.definition()<CR>", opts)
-
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>",  { buffer = ev.buf, desc = "Go to [D]efinition" })
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to [R]eferences" })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to [D]eclaration" })
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "Show [K]ind of symbol" })
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to [I]mplementation" })
   end,
 })
 
