@@ -441,6 +441,12 @@ vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
 -- remove search highlight
 vim.keymap.set("n", "<leader>*", ":nohlsearch<CR>", { noremap = true, silent = true })
 
+-- Diagnostic keymaps
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
 -- default augroup
 local augroup = vim.api.nvim_create_augroup
 local DefaultGroup = augroup("DefaultGroup", {})
