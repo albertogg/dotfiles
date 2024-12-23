@@ -163,6 +163,17 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "ellisonleao/glow.nvim",
+    cmd = "Glow",
+    config = function()
+      require("glow").setup({
+        style = "dark",
+        width = 120,
+      })
+    end,
+  },
+
   -- testing framework
   {
     "vim-test/vim-test",
