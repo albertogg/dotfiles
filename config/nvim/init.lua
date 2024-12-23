@@ -52,6 +52,29 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      preset = "classic",
+      icons = {
+        -- set to false to disable all mapping icons,
+        -- both those explicitly added in a mapping
+        -- and those from rules
+        mappings = false,
+      },
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
+
   -- telescope (fuzzy finder)
   {
     "nvim-telescope/telescope.nvim",
