@@ -462,13 +462,13 @@ autocmd("BufWritePre", {
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>.", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>.", builtin.find_files, { desc = "Telescope - Find Files " })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope - Live Grep Find" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope - Find in Buffers" })
 
 -- vim-test
-vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true, desc = "Test - Test Nearest" })
+vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true, desc = "Test - Test File" })
 
 -- file format based on file type
 autocmd("FileType", {
@@ -521,10 +521,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
   end,
 })
-
--- vim-test
-vim.keymap.set("n", "<leader>tf", ":TestFile -v<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>tt", ":TestNearest -v<CR>", { noremap = true, silent = true })
 
 -- automatically resize all vim buffers if I resize the terminal window
 vim.api.nvim_command("autocmd VimResized * wincmd =")
