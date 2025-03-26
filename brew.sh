@@ -10,6 +10,7 @@ brew install git
 brew install fzf
 brew install ripgrep
 brew install neovim
+brew install ghostty
 brew install reattach-to-user-namespace
 
 # Development formulae
@@ -21,6 +22,7 @@ brew install ruby-build
 brew install go
 brew install jenv
 brew install rustup-init
+brew install fnm
 
 # Yubikey
 brew install ykman
