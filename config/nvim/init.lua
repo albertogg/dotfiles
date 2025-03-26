@@ -333,15 +333,17 @@ require("lazy").setup({
     dependencies = {
       { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
+      { "nvim-telescope/telescope.nvim" }, -- explicitly add telescope dependency
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     event = "VeryLazy",
     opts = {
       -- See Configuration section for options
-      model = "claude-3.5-sonnet",
+      model = "claude-3.7-sonnet",
+      chat_autocomplete = true,
       window = {
-        layout = 'float',
-        relative = 'cursor',
+        layout = "float",
+        relative = "cursor",
         width = 0.5,
         height = 0.5,
       },
@@ -365,6 +367,13 @@ require("lazy").setup({
           require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
         end,
         desc = "CopilotChat - Prompt actions",
+      },
+      {
+        "<leader>cco",
+        function()
+          require("CopilotChat").open({ selection = require("CopilotChat.select").buffer })
+        end,
+        desc = "CopilotChat - Open Chat",
       },
     },
   },
@@ -395,7 +404,7 @@ vim.opt.list = true                -- Invisible characters notations
 vim.opt.splitbelow = true          -- open split pane below
 vim.opt.splitright = true          -- open split pane to the right
 
-vim.opt.completeopt = { "menuone", "noinsert", "noselect" } -- Autocomplete options
+vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup" } -- Autocomplete options
 vim.opt.listchars = "tab:»·,eol:¬,trail:·" -- Invisible characters notations
 
 vim.opt.undofile = true
