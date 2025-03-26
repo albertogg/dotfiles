@@ -333,7 +333,6 @@ require("lazy").setup({
     dependencies = {
       { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
-      { "nvim-telescope/telescope.nvim" }, -- explicitly add telescope dependency
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     event = "VeryLazy",
@@ -346,6 +345,13 @@ require("lazy").setup({
         relative = "cursor",
         width = 0.5,
         height = 0.5,
+      },
+      mappings = {
+        -- Use tab for completion
+        -- https://github.com/CopilotC-Nvim/CopilotChat.nvim/issues/701
+        complete = {
+          insert = "", -- Explicitly set an empty string. It lets regular copilot plugin overrides CopilotChat.nvim
+        },
       },
     },
     -- See Commands section for default commands if you want to lazy load on them
