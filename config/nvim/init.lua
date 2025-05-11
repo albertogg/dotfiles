@@ -228,8 +228,8 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -242,13 +242,13 @@ require("lazy").setup({
       -- Ensure that we have required lsp's ready.
       require("mason").setup()
 
-      local mason_lspconfig = require("mason-lspconfig")
-      mason_lspconfig.setup {
+      require("mason-lspconfig").setup {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
           "pyright",
           "ts_ls",
+          "postgres_lsp",
         },
       }
 
