@@ -28,6 +28,18 @@ require("lazy").setup({
     end,
   },
 
+  -- snacks
+  {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      picker = {
+        enabled = true,
+        ui_select = true,
+      },
+    },
+  },
+
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
@@ -350,7 +362,9 @@ require("lazy").setup({
         -- Use tab for completion
         -- https://github.com/CopilotC-Nvim/CopilotChat.nvim/issues/701
         complete = {
-          insert = "", -- Explicitly set an empty string. It lets regular copilot plugin overrides CopilotChat.nvim
+          detail = "Use @<Tab> or /<Tab> for options.",
+          -- Default <Tab> setting conflicts with cmp and coc-nvim
+          insert = "<S-Tab>",
         },
       },
     },
