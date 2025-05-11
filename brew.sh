@@ -8,6 +8,7 @@ brew install tree
 brew install coreutils
 brew install git
 brew install fzf
+brew install fd
 brew install ripgrep
 brew install neovim
 brew install ghostty
@@ -23,6 +24,7 @@ brew install go
 brew install jenv
 brew install rustup-init
 brew install fnm
+brew install tenv
 
 # Yubikey
 brew install ykman
@@ -41,7 +43,6 @@ brew install gitup --cask
 brew install tunnelblick
 brew install keybase
 brew install logi-options-plus
-brew install spotify
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 chmod -R go-w "$(brew --prefix)/share"
