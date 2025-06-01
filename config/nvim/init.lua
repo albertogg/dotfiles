@@ -350,7 +350,7 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {
       -- See Configuration section for options
-      model = "claude-3.7-sonnet",
+      model = "claude-sonnet-4",
       chat_autocomplete = true,
       window = {
         layout = "float",
