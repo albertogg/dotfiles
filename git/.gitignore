@@ -2,6 +2,7 @@
 *.sw[nop]
 .bundle
 .env
+.envrc
 db/*.sqlite3
 log/*.log
 rerun.txt
@@ -11,5 +12,8 @@ tmp/**/*
 !tmp/cache/.keep
 .java-version
 .rbenv-vars
+.node-version
 .idea
 *.iml
+venv
+.venv
