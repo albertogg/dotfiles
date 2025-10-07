@@ -275,13 +275,11 @@ require("lazy").setup({
         })
       })
 
-      local lspconfig = require("lspconfig")
-
       -- Lua
-      lspconfig.lua_ls.setup {}
+      vim.lsp.config.lua_ls = {}
 
       -- Rust
-      lspconfig.rust_analyzer.setup {
+      vim.lsp.config.rust_analyzer = {
         -- Server-specific settings. See `:help lspconfig-setup`
         settings = {
           ["rust-analyzer"] = {},
@@ -289,7 +287,7 @@ require("lazy").setup({
       }
 
       -- Go
-      lspconfig.gopls.setup {
+      vim.lsp.config.gopls = {
         flags = { debounce_text_changes = 200 },
         settings = {
           gopls = {
@@ -330,12 +328,20 @@ require("lazy").setup({
       }
 
       -- Python
-      lspconfig.pyright.setup {
+      vim.lsp.config.pyright = {
         capabilities = capabilities,
       }
 
       -- JavaScript TypeScript.
-      lspconfig.ts_ls.setup {}
+      vim.lsp.config.ts_ls = {
+        capabilities = capabilities,
+      }
+
+      vim.lsp.enable("gopls")
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("ts_ls")
     end,
   },
 
@@ -350,7 +356,7 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {
       -- See Configuration section for options
-      model = "claude-sonnet-4",
+      model = "claude-sonnet-4.5",
       chat_autocomplete = true,
       window = {
         layout = "float",
