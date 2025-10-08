@@ -123,6 +123,14 @@ require("lazy").setup({
     end
   },
 
+
+  -- insert parentheses, brackets, quotes, etc...
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true
+  },
+
   -- unix shell commands
   {
     "tpope/vim-eunuch",
