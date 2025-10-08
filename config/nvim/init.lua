@@ -90,7 +90,7 @@ require("lazy").setup({
   -- telescope (fuzzy finder)
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
