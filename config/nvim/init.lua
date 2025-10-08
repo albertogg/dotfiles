@@ -363,7 +363,7 @@ require("lazy").setup({
           require("CopilotChat").open({ selection = require("CopilotChat.select").buffer })
         end,
         desc = "CopilotChat - Open Chat",
-        mode = { "n", "i", "v" },
+        mode = { "n", "v" },
       },
     },
   },
