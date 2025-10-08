@@ -275,73 +275,39 @@ require("lazy").setup({
         })
       })
 
-      -- Lua
-      vim.lsp.config.lua_ls = {}
-
-      -- Rust
-      vim.lsp.config.rust_analyzer = {
-        -- Server-specific settings. See `:help lspconfig-setup`
-        settings = {
-          ["rust-analyzer"] = {},
+      local lsp_servers = {
+        lua_ls = {
+          capabilities = capabilities,
         },
-      }
 
-      -- Go
-      vim.lsp.config.gopls = {
-        flags = { debounce_text_changes = 200 },
-        settings = {
-          gopls = {
-            usePlaceholders = true,
-            gofumpt = true,
-            analyses = {
-              nilness = true,
-              unusedparams = true,
-              unusedwrite = true,
-              useany = true,
-            },
-            codelenses = {
-              gc_details = false,
-              generate = true,
-              regenerate_cgo = true,
-              run_govulncheck = true,
-              test = true,
-              tidy = true,
-              upgrade_dependency = true,
-              vendor = true,
-            },
-            experimentalPostfixCompletions = true,
-            completeUnimported = true,
-            staticcheck = true,
-            directoryFilters = { "-.git", "-node_modules" },
-            semanticTokens = true,
-            hints = {
-              assignVariableTypes = true,
-              compositeLiteralFields = true,
-              compositeLiteralTypes = true,
-              constantValues = true,
-              functionTypeParameters = true,
-              parameterNames = true,
-              rangeVariableTypes = true,
-            },
+        pyright = {
+          capabilities = capabilities,
+        },
+        ts_ls = {
+          capabilities = capabilities,
+        },
+
+        rust_analyzer = {
+          capabilities = capabilities,
+          -- Server-specific settings. See `:help lspconfig-setup`
+          settings = {
+            ["rust-analyzer"] = {},
           },
         },
+
+        gopls = {
+          capabilities = capabilities,
+        },
       }
 
-      -- Python
-      vim.lsp.config.pyright = {
-        capabilities = capabilities,
-      }
-
-      -- JavaScript TypeScript.
-      vim.lsp.config.ts_ls = {
-        capabilities = capabilities,
-      }
-
-      vim.lsp.enable("gopls")
-      vim.lsp.enable("lua_ls")
-      vim.lsp.enable("rust_analyzer")
-      vim.lsp.enable("pyright")
-      vim.lsp.enable("ts_ls")
+      -- Configure and enable each server
+      for server_name, config in pairs(lsp_servers) do
+        if next(config) ~= nil then
+          -- Server has custom config
+          vim.lsp.config[server_name] = config
+        end
+        vim.lsp.enable(server_name)
+      end
     end,
   },
 
@@ -355,6 +321,11 @@ require("lazy").setup({
     build = "make tiktoken", -- Only on MacOS or Linux
     event = "VeryLazy",
     opts = {
+      -- Default selection is the current buffer
+      resources = {
+        "buffer",
+        "selection",
+      },
       -- See Configuration section for options
       model = "claude-sonnet-4.5",
       chat_autocomplete = true,
@@ -387,19 +358,12 @@ require("lazy").setup({
         desc = "CopilotChat - Quick chat",
       },
       {
-        "<leader>ccp",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-        end,
-        desc = "CopilotChat - Prompt actions",
-      },
-      {
         "<leader>cco",
         function()
           require("CopilotChat").open({ selection = require("CopilotChat.select").buffer })
         end,
         desc = "CopilotChat - Open Chat",
+        mode = { "n", "i", "v" },
       },
     },
   },
