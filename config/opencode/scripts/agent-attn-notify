@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+set -u
+
+EVENT=""
+SESSION=""
+TITLE="OpenCode"
+BODY="Input needed"
+REPO=""
+CWD=""
+DEDUPE_SECONDS="${ATTN_NOTIFY_DEDUPE_SECONDS:-30}"
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --event)
+      EVENT="${2:-}"
+      shift 2
+      ;;
+    --session)
+      SESSION="${2:-}"
+      shift 2
+      ;;
+    --title)
+      TITLE="${2:-}"
+      shift 2
+      ;;
+    --body)
+      BODY="${2:-}"
+      shift 2
+      ;;
+    --repo)
+      REPO="${2:-}"
+      shift 2
+      ;;
+    --cwd)
+      CWD="${2:-}"
+      shift 2
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
+if [ -z "$EVENT" ]; then
+  EVENT="input-needed"
+fi
+
+if [ -z "$SESSION" ]; then
+  SESSION="unknown"
+fi
+
+if ! [ "$DEDUPE_SECONDS" -ge 0 ] 2>/dev/null; then
+  DEDUPE_SECONDS=30
+fi
+
+STATE_DIR="/tmp/opencode-attn-notify"
+mkdir -p "$STATE_DIR"
+
+KEY_HASH="$(printf '%s' "$EVENT|$SESSION" | cksum | awk '{print $1}')"
+STAMP_FILE="$STATE_DIR/$KEY_HASH.stamp"
+NOW="$(date +%s)"
+
+if [ -f "$STAMP_FILE" ] && [ "$DEDUPE_SECONDS" -gt 0 ]; then
+  LAST="$(cat "$STAMP_FILE" 2>/dev/null || true)"
+  if [ -n "$LAST" ] && [ $((NOW - LAST)) -lt "$DEDUPE_SECONDS" ]; then
+    exit 0
+  fi
+fi
+
+printf '%s' "$NOW" > "$STAMP_FILE"
+
+PREFIX=""
+if [ -n "$REPO" ]; then
+  PREFIX="$REPO"
+elif [ -n "$CWD" ]; then
+  PREFIX="$(basename "$CWD")"
+fi
+
+if [ -n "$PREFIX" ]; then
+  BODY="$PREFIX | $BODY"
+fi
+
+ESC_BODY="${BODY//\\/\\\\}"
+ESC_BODY="${ESC_BODY//\"/\\\"}"
+ESC_TITLE="${TITLE//\\/\\\\}"
+ESC_TITLE="${ESC_TITLE//\"/\\\"}"
+
+if [ "$(uname -s)" = "Darwin" ] && command -v osascript >/dev/null 2>&1; then
+  osascript -e "display notification \"$ESC_BODY\" with title \"$ESC_TITLE\"" >/dev/null 2>&1 || true
+elif command -v notify-send >/dev/null 2>&1; then
+  notify-send "$TITLE" "$BODY" >/dev/null 2>&1 || true
+fi
+
+if [ -n "${TMUX:-}" ] && command -v tmux >/dev/null 2>&1; then
+  tmux display-message "[agent] $BODY" >/dev/null 2>&1 || true
+  if [ -t 1 ] || [ -t 2 ]; then
+    printf '\a' >&2 || true
+  fi
+fi
+
+exit 0
