@@ -26,6 +26,7 @@ brew install rustup-init
 brew install fnm
 brew install tenv
 brew install gh
+brew install rtk
 brew install opencode
 
 # Yubikey
