@@ -166,6 +166,20 @@ require("lazy").setup({
         },
 
       })
+
+      -- Neovim 0.12 + current nvim-treesitter can crash in Terraform injections
+      -- with: "attempt to call method 'range' (a nil value)".
+      -- The default HCL query uses #downcase! for heredoc language capture, which
+      -- hits that bug. This override keeps heredoc/comment injections but avoids it.
+      -- Remove this once upstream fixes the 0.12 compatibility issue.
+      vim.treesitter.query.set("terraform", "injections", [[
+((comment) @injection.content
+  (#set! injection.language "comment"))
+
+(heredoc_template
+  (template_literal) @injection.content
+  (heredoc_identifier) @injection.language)
+      ]])
     end,
   },
 
