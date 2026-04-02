@@ -11,6 +11,7 @@ brew install fzf
 brew install fd
 brew install ripgrep
 brew install neovim
+brew install tree-sitter-cli # required for nvim-treesitter
 brew install ghostty
 brew install reattach-to-user-namespace
 
