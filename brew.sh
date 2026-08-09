@@ -2,6 +2,7 @@
 brew install stow
 brew install openssl
 brew install zsh
+brew install herdr
 brew install tmux
 brew install tmate
 brew install tree
