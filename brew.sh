@@ -2,6 +2,7 @@
 brew install stow
 brew install openssl
 brew install zsh
+brew install herdr
 brew install tmux
 brew install tmate
 brew install tree
@@ -11,6 +12,7 @@ brew install fzf
 brew install fd
 brew install ripgrep
 brew install neovim
+brew install tree-sitter-cli # required for nvim-treesitter
 brew install ghostty
 brew install reattach-to-user-namespace
 
@@ -25,6 +27,9 @@ brew install jenv
 brew install rustup-init
 brew install fnm
 brew install tenv
+brew install gh
+brew install rtk
+brew install opencode
 
 # Yubikey
 brew install ykman

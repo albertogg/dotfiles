@@ -1,0 +1,15 @@
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[keys]
+prefix = "ctrl+s"
+split_vertical = "prefix+|"
+split_horizontal = "prefix+double_quote"
+
+[ui]
+prompt_new_tab_name = false
+
+[ui.toast]
+delivery = "terminal"
+delay_seconds = 1

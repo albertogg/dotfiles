@@ -10,5 +10,10 @@ else
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+# Detect if ~/.local/bin exists
+if [ -d $HOME/.local/bin ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Remove duplicates from PATH.
 typeset -U PATH
