@@ -1,0 +1,10 @@
+# Approved work tools. Installing Docker does not start its application.
+brew "awscli"
+brew "kubernetes-cli"
+brew "helm"
+brew "kubectx"
+brew "tenv"
+cask "docker-desktop"
+
+# Terragrunt versions will be managed through tenv after version selection.
+# Do not also install a competing standalone Terragrunt package.

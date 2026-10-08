@@ -1,0 +1,20 @@
+# Approved daily tools and development runtimes; no service activation.
+# Node and its npm/pnpm belong to fnm, not a separate Homebrew Node install.
+brew "bash-completion@2"
+brew "fnm"
+brew "go"
+# Preserve the currently installed Python minor; projects use pip inside venvs.
+brew "python@3.14"
+brew "herdr"
+brew "neovim"
+brew "fzf"
+brew "ripgrep"
+brew "fd"
+brew "gh"
+brew "direnv"
+brew "git-lfs"
+brew "jq"
+brew "tree"
+brew "rtk"
+brew "opencode"
+cask "ghostty"

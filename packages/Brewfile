@@ -1,0 +1,5 @@
+# Migration foundation only. Daily workflow, runtimes and desktop packages
+# are separate audit decisions; omission does not mean uninstall.
+brew "bash"
+brew "git"
+brew "stow"

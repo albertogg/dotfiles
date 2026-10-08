@@ -1,0 +1,4 @@
+# Checks for managed Bash configuration and deployment.
+brew "shellcheck"
+brew "shfmt"
+brew "bats-core"

@@ -1,0 +1,4 @@
+# Required YubiKey SSH workflow. Package installation only:
+# no key setup, service restart, commit signing or changes to touch policies.
+brew "ykman"
+brew "yubikey-agent"
