@@ -5,9 +5,11 @@
 ## Migration to Bash and CachyOS
 
 The migration is in progress. See [the package audit and phase gates](docs/migration.md).
-The existing Zsh setup below has not been replaced yet.
+**macOS stays on Zsh; Bash deployment is for CachyOS only.** The existing
+macOS startup files and login shell will remain unchanged.
 
-For the minimal macOS migration foundation, use:
+The Homebrew manifests serve as the macOS audit/reference and test dependencies,
+not a macOS Bash cutover. For the minimal checking foundation, use:
 
 ```sh
 HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check --file=packages/Brewfile --no-upgrade
@@ -26,8 +28,8 @@ Terragrunt versions are separate provisioning decisions; see the audit.
 
 ## Staged Bash configuration and checks
 
-The `bash/` Stow package is ready for testing; it has **not** been linked into
-your home or made your login shell.
+The `bash/` Stow package is staged for **CachyOS** and ready for testing. It has
+not been deployed, and it will not replace the macOS shell.
 
 ```text
 bash/
@@ -60,27 +62,29 @@ Run all managed-shell checks (also works from outside the repository):
 ./scripts/check.sh
 ```
 
-On macOS, this requires Homebrew Bash 5, not `/bin/bash`. Try the candidate
-in a child shell without deploying any files:
+Checks on macOS require Homebrew Bash 5, not `/bin/bash`; using it to run tests
+does not change your login shell. Optional preview in a child shell, for testing
+only (not macOS deployment):
 
 ```sh
 cd ~/.dotfiles
 INPUTRC="$PWD/bash/.inputrc" /opt/homebrew/bin/bash --noprofile --rcfile "$PWD/bash/.bashrc" -i
 ```
 
-Run `exit` to return to your current shell. Validate Node/npm/pnpm, direnv,
-completion, herdr, clipboard and YubiKey SSH before cutover. This does not
-install or upgrade Node versions.
+Run `exit` to return to your current shell. On CachyOS, validate Node/npm/pnpm,
+direnv, completion, herdr, clipboard and YubiKey SSH before cutover. The preview
+does not install or upgrade Node versions.
 
-Before any deployment, check conflicts:
+On **CachyOS only**, check conflicts before deployment:
 
 ```sh
 stow --simulate --no-folding --target="$HOME" bash
 ```
 
-The existing unmanaged `~/.bashrc` must be explicitly backed up before linking;
-do not use `--adopt` or overwrite it automatically. Login-shell changes and
-removal of the old Zsh setup remain separate, pending steps.
+On CachyOS, explicitly back up any unmanaged conflicting startup files; do not
+use `--adopt` or overwrite them automatically. Switch the CachyOS login shell
+only after validation. Keep the macOS Zsh package, startup files and account
+shell unchanged; do not deploy the Bash package into the macOS home.
 
 ## Dependencies (existing Zsh setup)
 

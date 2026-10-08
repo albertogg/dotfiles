@@ -1,6 +1,11 @@
 # macOS → CachyOS migration
 
-Target: CachyOS + niri + Noctalia, with modern Bash on both platforms.
+Target: CachyOS + niri + Noctalia, with modern Bash on CachyOS only.
+macOS stays on Zsh. Keep its startup files, account shell and working services
+unchanged; do not deploy Bash into the macOS home or register it as a login
+shell there. Homebrew Bash remains available for repository tests and optional
+child-shell previews, not a macOS cutover.
+
 Keep GNU Stow. Use native package managers, not a new dotfile framework.
 
 ## Progress
@@ -10,10 +15,11 @@ Keep GNU Stow. Use native package managers, not a new dotfile framework.
 - [x] Approve daily workflow, runtime choices and SSH security requirements.
 - [x] Apply the foundation manifest twice without upgrades (all packages already installed).
 - [x] Install approved workflow packages and shell-checking dependencies; repeat without upgrades.
-- [ ] Provision the selected newer Node 24.x patch and its approved npm-global tools.
+- [ ] Provision latest Node 24.x and approved npm-global tools on CachyOS.
 - [x] Implement and test staged Bash before changing the login shell.
 - [ ] Validate herdr configuration, clipboard and YubiKey integration.
-- [ ] Switch macOS login shell to Bash; remove obsolete tracked Zsh setup.
+- [ ] Deploy Bash and switch the CachyOS account shell after target validation.
+- [ ] Preserve the macOS Zsh setup; do not remove its tracked configuration.
 - [ ] Verify CachyOS package names and deploy on the target machine.
 - [ ] Validate niri/Noctalia session integration.
 - [ ] Complete regression suite and CI.
@@ -300,14 +306,16 @@ Validation:
 - Stow simulation changes nothing; repeated deployments produce identical
   symlink targets; unmanaged conflicts are rejected without partial deployment.
 
-Still needed: a human interactive check in Ghostty/herdr, clipboard and YubiKey
-SSH authentication, explicit backup of the existing real `~/.bashrc`, deployment,
-registration/login-shell change, Linux validation and CI. Do not treat stubbed
-Linux branches as proof of a working CachyOS desktop.
+Still needed on CachyOS: verified package manifests and idempotent provisioning,
+real Ghostty/herdr checks, clipboard and YubiKey SSH authentication, backup of
+any conflicting target startup files, Bash deployment/account-shell change,
+Linux validation and CI. Do not treat stubbed Linux branches as proof of a
+working CachyOS desktop. The earlier macOS smoke checks were isolated tests,
+not deployment; macOS will remain on Zsh.
 
-## Bash implementation gate
+## Bash implementation gate (CachyOS only)
 
-1. Inspect and preserve existing startup files; Stow must fail on unmanaged
+1. Inspect and preserve existing CachyOS startup files; Stow must fail on unmanaged
    conflicts, never adopt or overwrite them automatically.
 2. Add `.bash_profile`, `.bashrc`, and `.inputrc` as one Stow package.
 3. Define explicit startup ordering. Login environment and interactive hooks
@@ -321,14 +329,15 @@ Linux branches as proof of a working CachyOS desktop.
    without changing the account shell first.
 8. Verify agent service/socket ownership without overriding forwarded SSH
    sockets or weakening YubiKey signing/touch requirements.
-9. Register the exact modern Bash path in `/etc/shells` only if absent, then
-   change the account shell only if different. Both are explicit operations.
-10. Check terminal/herdr overrides and a fresh login before removing tracked
-    Zsh configuration. Keep temporary recovery backups outside the repo.
+9. Verify the CachyOS system Bash path is listed in `/etc/shells`, then change
+   only the CachyOS account shell if different. Do not alter macOS shell settings.
+10. Check target terminal/herdr overrides and a fresh login. Preserve fish if
+    vendor tooling needs it and keep the macOS Zsh configuration in the repo.
+    Keep temporary recovery backups outside the repo.
 
-Recovery before cutover: the current account remains `/bin/zsh` and tracked
-Zsh configuration remains available. After cutover, retain a working terminal
-while checking fresh sessions. Do not automate rollback of unrelated changes.
+Recovery on CachyOS: record the original account shell and retain a working
+terminal while checking fresh sessions. Restore only explicit target changes
+if needed. Do not automate rollback of unrelated changes. macOS is unchanged.
 
 ## CachyOS / niri / Noctalia gate
 
