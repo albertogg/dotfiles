@@ -1,0 +1,12 @@
+# Readline configuration for interactive Bash.
+set editing-mode vi
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+set keymap vi-insert
+"\C-f": vi-movement-mode
+"jj": vi-movement-mode
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-r": reverse-search-history
+"\C-p": history-search-backward
