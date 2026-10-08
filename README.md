@@ -2,7 +2,87 @@
 
 ![v5terminal](https://dl.dropboxusercontent.com/s/zybadcuwcm5lyda/v5terminal.png)
 
-## Dependencies
+## Migration to Bash and CachyOS
+
+The migration is in progress. See [the package audit and phase gates](docs/migration.md).
+The existing Zsh setup below has not been replaced yet.
+
+For the minimal macOS migration foundation, use:
+
+```sh
+HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check --file=packages/Brewfile --no-upgrade
+HOMEBREW_NO_AUTO_UPDATE=1 brew bundle install --file=packages/Brewfile --no-upgrade
+```
+
+This selects only Bash, Git and Stow. It does not change your login shell,
+start services or remove other packages. Do not use Bundle cleanup with this
+minimal manifest, or run the legacy `brew.sh` for the migration.
+
+Approved daily tools (including fnm, Go and herdr) are listed separately in
+`packages/Brewfile.workflow`; approved work tools are in `packages/Brewfile.work`.
+Required YubiKey SSH packages are in `packages/Brewfile.security`.
+Use the same Bundle commands with the appropriate `--file` path. Node/pnpm and
+Terragrunt versions are separate provisioning decisions; see the audit.
+
+## Staged Bash configuration and checks
+
+The `bash/` Stow package is ready for testing; it has **not** been linked into
+your home or made your login shell.
+
+```text
+bash/
+├── .bash_profile
+├── .bashrc
+├── .inputrc
+└── .bash/
+    ├── environment.bash
+    └── interactive/
+        ├── 10-history.bash
+        ├── 20-prompt.bash
+        ├── 30-completion.bash
+        ├── 40-fnm.bash
+        ├── 50-direnv.bash
+        ├── 60-herdr.bash
+        └── 70-fzf.bash
+```
+
+`.bashrc` loads the shared environment first, then the numbered interactive
+modules once per shell. Modules resolve relative to `.bashrc`, so the same
+loader works with Stow and with the undeployed `--rcfile` preview below.
+
+Checking dependencies live in `packages/Brewfile.dev`. Bash completion is
+included in the workflow manifest. Install missing entries with `--no-upgrade`
+and `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+
+Run all managed-shell checks (also works from outside the repository):
+
+```sh
+./scripts/check.sh
+```
+
+On macOS, this requires Homebrew Bash 5, not `/bin/bash`. Try the candidate
+in a child shell without deploying any files:
+
+```sh
+cd ~/.dotfiles
+INPUTRC="$PWD/bash/.inputrc" /opt/homebrew/bin/bash --noprofile --rcfile "$PWD/bash/.bashrc" -i
+```
+
+Run `exit` to return to your current shell. Validate Node/npm/pnpm, direnv,
+completion, herdr, clipboard and YubiKey SSH before cutover. This does not
+install or upgrade Node versions.
+
+Before any deployment, check conflicts:
+
+```sh
+stow --simulate --no-folding --target="$HOME" bash
+```
+
+The existing unmanaged `~/.bashrc` must be explicitly backed up before linking;
+do not use `--adopt` or overwrite it automatically. Login-shell changes and
+removal of the old Zsh setup remain separate, pending steps.
+
+## Dependencies (existing Zsh setup)
 
 To use the dotfiles you'll need the following dependencies, you can install any
 of these dependencies with [homebrew][brew].
